@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Sedona</title>
+</head>
+<body>
+<header class="page-header">
+    <div class="page-header__inner">
+        <nav class="page-nav">
+            <ul class="page-nav__list">
+                <li><a href="#">Карта штата</a></li>
+                <li><a href="#">Информация</a></li>
+                <li><a href="#">Фото и Видео</a></li>
+                <li><a href="#">Гостинницы</a></li>
+            </ul>
+            <button class="page-nav__collapse page-nav__collapse--close" type="button">
+                <span class="page-nav__row"></span>
+                <span class="page-nav__row"></span>
+                <span class="page-nav__row"></span>
+            </button>
+        </nav>
+        <div class="page-header__wrapper">
+            <a class="page-header__logo" href="index.html">
+                <img src="img/logo.png" width="138" height="70" alt="sedona">
+            </a>
+        </div>
+    </div>
+</header>
+
+
+<main class="page-content">
+    <div class="page-content__inner">
+        <section class="intro">
+            <img src="#" width="320" height="512" alt="sedona">
+        </section>
+        <article class="reasons">
+            <div class="reasons-inner">
+                <h1 class="reasons__title">СЕДОНА — небольшой городок в АРИЗОНЕ, заслуживающий большего!</h1>
+                <p>Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!</p>
+            </div>
+            <section class="reason">
+                <div class="reason__inner">
+                    <h2 class="reason__title">настоящий городок</h2>
+                    <div class="reason__number">
+                        <div>№1</div>
+                    </div>
+                    <p>СЕДОНА НЕ АТРАКЦИОН ДЛЯ ТУРИСТОВ, ТАМ ТЕЧЕТ СВОЯ ЖИЗНЬ</p>
+                </div>
+                <figure class="reason__inner">
+                    <img src="#" width="320" height="256" alt="photo motel">
+                </figure>
+                <div class="reason__inner">
+                    <span class="reason__item">жилье</span>
+                    <div>Рекомендуем пожить в настоящем мотеле, все как в кино!</div>
+                    <span class="reason__item">сувениры</span>
+                    <div>не только китайского, но и местного производства!</div>
+                    <span class="reason__item">еда</span>
+                    <div>Всегда заказывайте ФИРМЕННЫЙ БУРГЕР, Вы НЕ разочаруетесь!</div>
+                </div>
+            </section>
+            <section class="reason">
+                <div class="reason__inner">
+                    <h2 class="reason__title">там есть мост дьявола</h2>
+                    <div class="reason__number">
+                        <div>№2</div>
+                    </div>
+                    <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+                </div>
+                <figure class="reason__inner">
+                    <img src="#" width="320" height="256" alt="photo motel">
+                </figure>
+            </section>
+            <section class="reason">
+                <div class="reason__inner">
+                    <h2 class="reason__title">небольшая площадь</h2>
+                    <div class="reason__number">
+                        <div>№3</div>
+                    </div>
+                    <p>ВСЕ достопримечательности находятся очень близко</p>
+                </div>
+            </section>
+            <section class="reason">
+                <div class="reason__inner">
+                    <h2 class="reason__title">красивая дорога</h2>
+                    <div class="reason__number">
+                        <div>№4</div>
+                    </div>
+                    <p>ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА совсем НЕ СКУЧНО!</p>
+                </div>
+            </section>
+            <section class="reason">
+                <div class="reason__inner">
+                    <h2 class="reason__title">мало туристов</h2>
+                    <div class="reason__number">
+                        <div>№5</div>
+                    </div>
+                    <p>большинство едет в гранд каньон и толпится там</p>
+                </div>
+            </section>
+        </article>
+        <section class="interested">
+            <h2 class="interesting__title">Заинтереисовались?</h2>
+            <p>Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне</p>
+        </section>
+        <section class="search">
+            <h2 class="search__title">поиск гостинницы в седоне</h2>
+            <form action="#" method="post">
+                <label>дата заезда:
+                    <input class="search__input-data" type="date" name="arrival" value="">
+                </label>
+                <label>дата выезда:
+                    <input class="search__input-data" type="date" name="departure" value="">
+                </label>
+                <label>взрослые:
+                    <input class="search__input-number" type="number" min="1" name="adult" value="2">
+                </label>
+                <label>дети:
+                    <input class="search__input-number" type="number" min="0" name="children" value="0">
+                </label>
+                <button class="btn" type="submit" name="search">Найти</button>
+            </form>
+        </section>
+        <div class="map">
+            <img src="#" width="320" height="594" alt="map-sedona">
+        </div>
+    </div>
+</main>
+
+
+<footer class="page-footer">
+    <div class="page-footer__inner">
+        <div class="page-footer__hash-tag">
+            <b>#visitsedona</b>
+        </div>
+        <div class="page-footer__social">
+            <ul class="page-footer__links">
+                <li><a class="page-footer__links-tw" href="#">twitter</a></li>
+                <li><a class="page-footer__links-fb" href="#">facebook</a></li>
+                <li><a class="page-footer__links-yt" href="#">youtube</a></li>
+            </ul>
+        </div>
+        <div class="page-footer__copyright">
+            <span>website by</span>
+            <a class="btn" href="#">a</a>
+            <span>for</span>
+            <a class="btn" href="#">html academy</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

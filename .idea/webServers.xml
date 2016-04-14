@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ff880131-6b78-4320-88ee-79122adebc7d" name="sedona" url="http://sedona.makeevka.com">
+        <fileTransfer host="93.89.215.39" port="1322" rootFolder="/var/www/sedona.makeevka.com" accessType="SFTP" password="dfd9dfe6dfc3dfcddf9adf93dfc1" username="php1">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="1322" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
