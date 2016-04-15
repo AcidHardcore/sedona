@@ -1,0 +1,21 @@
+{
+  "name": "sedona.makeevka.com",
+  "description": "",
+  "main": "",
+  "authors": [
+    "vit"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*"
+  }
+}
