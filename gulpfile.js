@@ -21,11 +21,11 @@ var gulp = require('gulp'),
 // rimraf = require('rimraf'),
 
 // Запуск `NODE_ENV=production npm start [задача]` приведет к сборке без sourcemaps
-const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'dev';
+const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 // Компиляция LESS
 gulp.task('css', function () {
-    return gulp.src('./less/style.less')
+    return gulp.src('./source/less/style.less')
         .pipe(gulpIf(isDev, sourcemaps.init()))
         .pipe(debug({title: "LESS:"}))
         .pipe(less())
@@ -36,27 +36,34 @@ gulp.task('css', function () {
             }
         }))
         .pipe(autoprefixer({browsers: ['last 2 version']}))
+        .pipe(debug({title: "autoPrefixer:"}))
         .pipe(csscomb())
-        .pipe(gulpIf(!isDev, cleancss()))
+        .pipe(debug({title: "cssComb:"}))
+        .pipe(gulpIf(!isDev, cleancss())) 
+        .pipe(gulpIf(!isDev, debug({title: "cleenCss:"})))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulpIf(isDev, sourcemaps.write()))
-        .pipe(gulp.dest('./css/'));
+        .pipe(gulp.dest('./build/css/'));
 });
-
+//tracking for changes
 gulp.task('watch', function () {
-    gulp.watch('./less/components/*.less', gulp.series('css'));
+    console.log('isDev');
+    gulp.watch('./source/less/components/*.less', gulp.series('css'));
+    console.log(isDev);
 });
 
+//auto browser synchronisation
 gulp.task('serve', function () {
     browserSync.init({
         server: {
-            baseDir: "./",
-            index: "index.html"
+            baseDir: "./build/"
+            // index: "./build/index.html"   it's need where index.html in the root folder
         }
     });
-    browserSync.watch('css/*.*').on('change', browserSync.reload);
+    browserSync.watch('./build/css/*.*').on('change', browserSync.reload);
 });
 
-gulp.task('dev',
+//default task - auto running on WebStorm start
+gulp.task('default',
     gulp.series('css', gulp.parallel('watch', 'serve'))
 );

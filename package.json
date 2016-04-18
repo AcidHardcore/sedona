@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "SET NODE_ENV=development & gulp"
+  },
   "name": "sedona.makeevka.com",
   "version": "1.0.0",
   "description": "",
