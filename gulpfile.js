@@ -7,26 +7,28 @@ var gulp = require('gulp'),
     prefixer = require('gulp-autoprefixer'),
     less = require('gulp-less'),
     sourcemaps = require('gulp-sourcemaps'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    concat = require('gulp-concat'),
+    csscomb = require('gulp-csscomb');
     // livereload = require('gulp-livereload');
     // rigger = require('gulp-rigger'),
     // imagemin = require('gulp-imagemin'),
     // pngquant = require('imagemin-pngquant'),
     // rimraf = require('rimraf'),
 
-/*gulp.task('less', function () {
-    return gulp.src('./less/style.less')
-        .pipe(less())
-        .pipe(gulp.dest('./css/'))
-        .pipe(livereload());
-});*/
+gulp.task('comb', function () {
+    return gulp.src('./less/**/*.*')
+        .pipe(csscomb())
+        .pipe(gulp.dest('./less/**/*.*'))
+});
 
 gulp.task('css', function () {
     return gulp.src('./less/style.less')
         .pipe(sourcemaps.init())
+        .pipe(csscomb())
         .pipe(less())
-        .pipe(cleanCSS())
         .pipe(prefixer())
+        .pipe(cleanCSS())
         .pipe(rename({suffix: '.min'}))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./css/min/'));
@@ -47,7 +49,7 @@ gulp.task('serve', function () {
             index: "index.html"
         }
     });
-    browserSync.watch('/**/*.*').on('change', browserSync.reload);
+    browserSync.watch('css/min/*.*').on('change', browserSync.reload);
 });
 
 gulp.task( 'dev',
