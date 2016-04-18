@@ -45,7 +45,8 @@ gulp.task('css', function () {
         .pipe(gulpIf(!isDev, debug({title: "cleenCss:"})))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulpIf(isDev, sourcemaps.write()))
-        .pipe(gulp.dest('./build/css/'));
+        .pipe(gulp.dest('./build/css/'))
+        .pipe(debug({title: "css:"}));
 });
 
 // coping and optimisation images
@@ -58,21 +59,23 @@ gulp.task('img', function () {
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         }))
-        .pipe(gulp.dest('./build/img'));
+        .pipe(gulp.dest('./build/img'))
+        .pipe(debug({title: "img:"}));
 });
 
 //Coping html files
 gulp.task('html', function (){
     console.log('---------- Coping html files');
     return gulp.src('./source/*.html', {since: gulp.lastRun('html')})
-        .pipe(gulp.dest('./build/'));
+        .pipe(gulp.dest('./build/'))
+        .pipe(debug({title: "html:"}));
 });
 
 //tracking for changes
 gulp.task('watch', function () {
     gulp.watch('./source/less/components/*.less', gulp.series('css'));
+    gulp.watch('./source/*.html', gulp.series('html'));
     gulp.watch('./source/img/*.{jpg,jpeg,gif,png,svg}', gulp.series('img'));
-    console.log(isDev);
 });
 
 //browser synchronisation
@@ -83,7 +86,9 @@ gulp.task('serve', function () {
             // index: "./build/index.html"   it's need where index.html in the root folder
         }
     });
-    browserSync.watch('./build/css/*.*').on('change', browserSync.reload);
+    browserSync.watch('./build/css/*.css').on('change', browserSync.reload);
+    browserSync.watch('./build/img/*.{jpg,jpeg,gif,png,svg}').on('change', browserSync.reload);
+    browserSync.watch('./build/*.html').on('change', browserSync.reload);
 });
 
 // cleaning of build folder
