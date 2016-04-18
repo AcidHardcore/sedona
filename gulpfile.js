@@ -18,8 +18,8 @@ var gulp = require('gulp'),
 // rigger = require('gulp-rigger'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
-    newer = require('gulp-newer');
-// rimraf = require('rimraf'),
+    newer = require('gulp-newer'),
+    del = require('del');
 
 // Запуск `NODE_ENV=production npm start [задача]` приведет к сборке без sourcemaps
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
@@ -48,7 +48,7 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./build/css/'));
 });
 
-// copy and optimisation images
+// coping and optimisation images
 gulp.task('img', function () {
     console.log('---------- Copy and optimisation images');
     return gulp.src('./source/img/*.{jpg,jpeg,gif,png,svg}', {since: gulp.lastRun('img')}) // only new files are change
@@ -61,6 +61,13 @@ gulp.task('img', function () {
         .pipe(gulp.dest('./build/img'));
 });
 
+//Coping html files
+gulp.task('html', function (){
+    console.log('---------- Coping html files');
+    return gulp.src('./source/*.html', {since: gulp.lastRun('html')})
+        .pipe(gulp.dest('./build/'));
+});
+
 //tracking for changes
 gulp.task('watch', function () {
     gulp.watch('./source/less/components/*.less', gulp.series('css'));
@@ -68,7 +75,7 @@ gulp.task('watch', function () {
     console.log(isDev);
 });
 
-//auto browser synchronisation
+//browser synchronisation
 gulp.task('serve', function () {
     browserSync.init({
         server: {
@@ -79,7 +86,16 @@ gulp.task('serve', function () {
     browserSync.watch('./build/css/*.*').on('change', browserSync.reload);
 });
 
+// cleaning of build folder
+gulp.task('clean', function () {
+    console.log('---------- cleaning of build folder');
+    return del([
+         './build/**/*.*',
+        '!' + './build/readme.md'
+    ]);
+});
+
 //default task - auto running on WebStorm start
 gulp.task('default',
-    gulp.series(gulp.parallel('css', 'img'), gulp.parallel('watch', 'serve'))
+    gulp.series('clean', gulp.parallel('css', 'img', 'html'), gulp.parallel('watch', 'serve'))
 );
