@@ -12,14 +12,14 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     gulpIf = require('gulp-if'),
     debug = require('gulp-debug'),
-    mqpacker = require('css-mqpacker'),
     postcss = require('gulp-postcss'),
     csscomb = require('gulp-csscomb'),
 // rigger = require('gulp-rigger'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     newer = require('gulp-newer'),
-    del = require('del');
+    del = require('del'),
+    gcmq = require('gulp-group-css-media-queries');
 
 // Запуск `NODE_ENV=production npm start [задача]` приведет к сборке без sourcemaps
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
@@ -37,6 +37,8 @@ gulp.task('css', function () {
                 message: err.message
             }
         }))
+        .pipe(gcmq())
+        .pipe(debug({title: "media queries:"}))
         .pipe(autoprefixer({browsers: ['last 2 version']}))
         .pipe(debug({title: "autoPrefixer:"}))
         .pipe(csscomb())
