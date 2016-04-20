@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "SET NODE_ENV=development & gulp"
+    "start": "cross-env NODE_ENV=dev gulp"
   },
   "name": "sedona.makeevka.com",
   "version": "1.0.0",
@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.12.3",
+    "cross-env": "^1.0.7",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean-css": "^2.0.6",

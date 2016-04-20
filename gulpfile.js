@@ -22,7 +22,7 @@ var gulp = require('gulp'),
     gcmq = require('gulp-group-css-media-queries');
 
 // Запуск `NODE_ENV=production npm start [задача]` приведет к сборке без sourcemaps
-const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'dev';
 
 //  LESS compilation
 gulp.task('css', function () {
@@ -38,7 +38,7 @@ gulp.task('css', function () {
             }
         }))
         .pipe(gcmq())
-        .pipe(debug({title: "media queries:"}))
+        .pipe(debug({title: "group media queries:"}))
         .pipe(autoprefixer({browsers: ['last 2 version']}))
         .pipe(debug({title: "autoPrefixer:"}))
         .pipe(csscomb())
@@ -75,7 +75,7 @@ gulp.task('html', function (){
 
 //tracking for changes
 gulp.task('watch', function () {
-    gulp.watch('./source/less/components/*.less', gulp.series('css'));
+    gulp.watch('./source/less/**/*.less', gulp.series('css'));
     gulp.watch('./source/*.html', gulp.series('html'));
     gulp.watch('./source/img/*.{jpg,jpeg,gif,png,svg}', gulp.series('img'));
 });
@@ -89,7 +89,7 @@ gulp.task('serve', function () {
         }
     });
     browserSync.watch('./build/css/*.css').on('change', browserSync.reload);
-    browserSync.watch('./build/img/*.{jpg,jpeg,gif,png,svg}').on('change', browserSync.reload);
+    browserSync.watch('./build/img/*.*').on('change', browserSync.reload);
     browserSync.watch('./build/*.html').on('change', browserSync.reload);
 });
 
