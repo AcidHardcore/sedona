@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
+    // sass = require('gulp-sass'),
     cleancss = require('gulp-clean-css'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -24,6 +24,16 @@ var gulp = require('gulp'),
 // Запуск `NODE_ENV=production npm start [задача]` приведет к сборке без sourcemaps
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'dev';
 
+//Less comb
+gulp.task('comb', function () {
+    console.log('---------- LESS combing');
+    return gulp.src('./source/less/**/*.*', {since: gulp.lastRun('comb')}) // only new files are change
+        .pipe(newer('./source/less/**/*.*'))  // keep only new files
+        .pipe(csscomb())
+        .pipe(debug({title: "cssComb:"}))
+        .pipe(gulp.dest('./source/less/**/*.*'))
+        .pipe(debug({title: "less combed:"}));
+});
 //  LESS compilation
 gulp.task('css', function () {
     console.log('---------- LESS compile');
@@ -41,8 +51,8 @@ gulp.task('css', function () {
         .pipe(debug({title: "group media queries:"}))
         .pipe(autoprefixer({browsers: ['last 2 version']}))
         .pipe(debug({title: "autoPrefixer:"}))
-        .pipe(csscomb())
-        .pipe(debug({title: "cssComb:"}))
+        // .pipe(csscomb())
+        // .pipe(debug({title: "cssComb:"}))
         .pipe(gulpIf(!isDev, cleancss()))
         .pipe(gulpIf(!isDev, debug({title: "cleenCss:"})))
         .pipe(rename({suffix: '.min'}))
