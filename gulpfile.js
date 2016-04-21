@@ -27,11 +27,11 @@ const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'dev';
 //Less comb
 gulp.task('comb', function () {
     console.log('---------- LESS combing');
-    return gulp.src('./source/less/**/*.*', {since: gulp.lastRun('comb')}) // only new files are change
-        .pipe(newer('./source/less/**/*.*'))  // keep only new files
+    return gulp.src('./source/less/**/*.less', {since: gulp.lastRun('comb')}) // only new files are change
+        .pipe(newer('./source/less/'))  // keep only new files
         .pipe(csscomb())
         .pipe(debug({title: "cssComb:"}))
-        .pipe(gulp.dest('./source/less/**/*.*'))
+        .pipe(gulp.dest('./source/less/'))
         .pipe(debug({title: "less combed:"}));
 });
 //  LESS compilation
@@ -51,8 +51,6 @@ gulp.task('css', function () {
         .pipe(debug({title: "group media queries:"}))
         .pipe(autoprefixer({browsers: ['last 2 version']}))
         .pipe(debug({title: "autoPrefixer:"}))
-        // .pipe(csscomb())
-        // .pipe(debug({title: "cssComb:"}))
         .pipe(gulpIf(!isDev, cleancss()))
         .pipe(gulpIf(!isDev, debug({title: "cleenCss:"})))
         .pipe(rename({suffix: '.min'}))
@@ -85,7 +83,7 @@ gulp.task('html', function (){
 
 //tracking for changes
 gulp.task('watch', function () {
-    gulp.watch('./source/less/**/*.less', gulp.series('css'));
+    gulp.watch('./source/less/**/*.less', gulp.series('comb', 'css'));
     gulp.watch('./source/*.html', gulp.series('html'));
     gulp.watch('./source/img/*.{jpg,jpeg,gif,png,svg}', gulp.series('img'));
 });
@@ -114,5 +112,5 @@ gulp.task('clean', function () {
 
 //default task - auto running on WebStorm start
 gulp.task('default',
-    gulp.series('clean', gulp.parallel('css', 'img', 'html'), gulp.parallel('watch', 'serve'))
+    gulp.series('clean', 'comb', gulp.parallel('css', 'img', 'html'), gulp.parallel('watch', 'serve'))
 );

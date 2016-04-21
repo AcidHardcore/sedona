@@ -1,29 +1,32 @@
 .container {
-  width: 320px;
-  margin: 0 auto;
+    width: 320px;
+    margin: 0 auto;
 
-  @media (@tablet-widths) {
-    width: 768px;
-  }
+    @media (@tablet-widths) {
+        width: 768px;
+    }
 
-  @media (@desktop-widths) {
-    width: 1200px;
-  }
+    @media (@desktop-widths) {
+        width: 1200px;
+    }
 }
 
 body {
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 21px;
-  text-transform: uppercase;
-  font-family: "PT Sans Regular", "Arial", sans-serif;
-  color: #333333;
-  background: #ffffff;
+    margin: 0;
+    padding: 0;
+
+    text-transform: uppercase;
+
+    color: #333;
+    background: #fff;
+
+    font-family: "PT Sans Regular", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 21px;
 }
 
 /*defend from overload img*/
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
