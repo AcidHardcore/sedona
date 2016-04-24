@@ -1,1 +1,33 @@
 @import "./../variables";
+
+.reason {
+  &__image {
+    height: 256px;
+    @media @mobile-widths-only {
+      height: 260px;
+    }
+
+  }
+  &__image--city {
+    background-image: url('./../img/photo-city@1x.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url('./../img/photo-city@2x.jpg');
+    }
+  }
+  &__image--bridge {
+    background-image: url('./../img/photo-bridge@1x.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url('./../img/photo-bridge@2x.jpg');
+    }
+  }
+}

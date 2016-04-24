@@ -27,8 +27,8 @@ const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'dev';
 //Less comb
 gulp.task('comb', function () {
     console.log('---------- LESS combing');
-    return gulp.src('./source/less/**/*.less', {since: gulp.lastRun('comb')}) // only new files are change
-        .pipe(newer('./source/less/'))  // keep only new files
+    return gulp.src('./source/less/**/*.less', {since: gulp.lastRun('comb')}) // only  files were change
+        .pipe(newer('./source/less/'))  // keep only src files as newer dst files
         .pipe(csscomb())
         .pipe(debug({title: "cssComb:"}))
         .pipe(gulp.dest('./source/less/'))
@@ -51,6 +51,8 @@ gulp.task('css', function () {
         .pipe(debug({title: "group media queries:"}))
         .pipe(autoprefixer({browsers: ['last 2 version']}))
         .pipe(debug({title: "autoPrefixer:"}))
+        .pipe(csscomb())
+        .pipe(debug({title: "cssComb:"}))
         .pipe(gulpIf(!isDev, cleancss()))
         .pipe(gulpIf(!isDev, debug({title: "cleenCss:"})))
         .pipe(rename({suffix: '.min'}))
