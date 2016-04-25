@@ -28,7 +28,7 @@ const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'dev';
 gulp.task('comb', function () {
     console.log('---------- LESS combing');
     return gulp.src('./source/less/**/*.less', {since: gulp.lastRun('comb')}) // only  files were change
-        .pipe(newer('./source/less/'))  // keep only src files as newer dst files
+        // .pipe(newer('./source/less/'))  // keep only src files as newer dst files
         .pipe(csscomb())
         .pipe(debug({title: "cssComb:"}))
         .pipe(gulp.dest('./source/less/'))
@@ -85,7 +85,7 @@ gulp.task('html', function (){
 
 //tracking for changes
 gulp.task('watch', function () {
-    gulp.watch('./source/less/**/*.less', gulp.series('comb', 'css'));
+    gulp.watch('./source/less/**/*.less', gulp.series('css'));
     gulp.watch('./source/*.html', gulp.series('html'));
     gulp.watch('./source/img/*.{jpg,jpeg,gif,png,svg}', gulp.series('img'));
 });

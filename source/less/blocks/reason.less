@@ -1,33 +1,118 @@
 @import "./../variables";
 
 .reason {
-  &__image {
-    height: 256px;
-    @media @mobile-widths-only {
-      height: 260px;
+    background-color: @light-blue;
+
+    &__inner {
+        max-width: 295px;
+        margin: 0 auto;
+    }
+    &--bg {
+        background-color: #eee;
+    }
+    &--delimiter::after {
+        position: relative;
+
+        display: block;
+
+        margin-right: 20px;
+        margin-left: 20px;
+
+        content: "";
+
+        border-bottom: 1px solid #d6d6d6;
+    }
+    &__title {
+        margin: 0;
+        padding-top: 40px;
+        padding-bottom: 20px;
+
+        color: #000;
+
+        font-size: 18px;
+        line-height: 26px;
+    }
+    &__number {
+        position: relative;
+        z-index: 2;
+
+        display: inline-block;
+
+        margin: 0;
+        padding-right: 5px;
+        padding-bottom: 25px;
+        padding-left: 5px;
+
+        background-color: #eee;
+    }
+    &__number-inner::after {
+        position: relative;
+        z-index: 1;
+        top: -35px;
+
+        display: block;
+
+        width: 50px;
+        margin: 0 auto;
+
+        content: "";
+
+        border-bottom: 1px solid #a8a8a8;
+    }
+    &__desc {
+        margin: 0;
+        padding-bottom: 45px;
     }
 
-  }
-  &__image--city {
-    background-image: url('./../img/photo-city@1x.jpg');
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center;
-
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      background-image: url('./../img/photo-city@2x.jpg');
+    &__inner--color,
+    &__title--color {
+        color: #fff;
     }
-  }
-  &__image--bridge {
-    background-image: url('./../img/photo-bridge@1x.jpg');
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center;
-
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      background-image: url('./../img/photo-bridge@2x.jpg');
+    &__number--color {
+        background-color: @light-blue;
     }
-  }
+    &__number-inner--color::after {
+        border-bottom: 1px solid #fff;
+    }
+    &__image {
+        height: 256px;
+        @media @mobile-widths-only {
+            height: 260px;
+        }
+    }
+    &__image--city {
+        background-image: url("./../img/photo-city@1x.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        -webkit-background-size: cover;
+        background-size: cover;
+
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+            background-image: url("./../img/photo-city@2x.jpg");
+        }
+    }
+    &__image--bridge {
+        background-image: url("./../img/photo-bridge@1x.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        -webkit-background-size: cover;
+        background-size: cover;
+
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+            background-image: url("./../img/photo-bridge@2x.jpg");
+        }
+    }
+    &--gradient::before {
+        display: block;
+
+        width: 100%;
+        height: 32px;
+        margin: 0 auto;
+
+        content: "";
+
+        background-color: #fff;
+        background-image: linear-gradient(to right bottom, transparent 50%, @light-blue 50%),
+        linear-gradient(to left bottom, transparent 50%, @light-blue 50%);
+    }
 }
