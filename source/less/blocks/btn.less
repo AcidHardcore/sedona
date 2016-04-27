@@ -1,1 +1,35 @@
 @import "./../variables";
+
+.btn {
+    color: #fff;
+    border: 0;
+
+    font-size: 21px;
+    line-height: 26px;
+
+    &--search {
+        width: 100%;
+        margin-bottom: 48px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+
+        background-color: @light-blue;
+    }
+    &--search:hover {
+        border: 0;
+        outline: 0;
+        background-color: #669ec0;
+    }
+    &--search:focus,
+    &--search:active {
+        color: #94b9d2;
+        border: 0;
+        outline: 0;
+        background-color: #5496bd;
+    }
+    &--copyright {
+        color: #333;
+
+        font-size: 14px;
+    }
+}

@@ -28,7 +28,6 @@ const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'dev';
 gulp.task('comb', function () {
     console.log('---------- LESS combing');
     return gulp.src('./source/less/**/*.less', {since: gulp.lastRun('comb')}) // only  files were change
-        // .pipe(newer('./source/less/'))  // keep only src files as newer dst files
         .pipe(csscomb())
         .pipe(debug({title: "cssComb:"}))
         .pipe(gulp.dest('./source/less/'))

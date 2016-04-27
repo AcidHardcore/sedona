@@ -1,15 +1,20 @@
 .container {
-    @media (@mobile-widths-only) {
-        width: 767px;
-        margin: 0 auto;
-    }
+    /*@media (@mobile-widths-only)
+    {*/
+    max-width: 320px;
+    margin: 0 auto;
+    /*}*/
     @media (@tablet-widths) {
         width: 768px;
     }
 
     @media (@desktop-widths) {
-        width: 1200px;
+        width: 1280px;
     }
+}
+
+.fluid-container {
+    .container;
 }
 
 body {
@@ -22,13 +27,24 @@ body {
     color: #333;
     background: #fff;
 
-    font-family: "PT Sans Regular", "Arial", sans-serif;
+    font-family: "PT Sans", "Arial", sans-serif;
     font-size: 14px;
     line-height: 21px;
 }
 
 /*defend from overload img*/
-img {
+img,
+svg {
     max-width: 100%;
     height: auto;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
