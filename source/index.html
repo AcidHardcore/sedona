@@ -176,44 +176,56 @@
                     <div class="search__form-inner">
                         <label class="search__label" for="data-in">дата заезда:</label>
                         <input class="search__input-data" id="data-in" type="date" name="arrival" value="">
-                        <svg class="search__calendar" version="1" xmlns="http://www.w3.org/2000/svg" width="19.875"
-                             height="21.916" viewBox="0 0 19.875 21.916">
-                            <path d="M17.04 2h-2.081V0h-2v2H6.917V0h-2v2H2.835A2.842 2.842 0 0 0 0 4.835v14.246a2.842 2.842 0 0 0 2.835 2.835H17.04a2.842 2.842 0 0 0 2.835-2.835V4.835A2.842 2.842 0 0 0 17.04 2zm.835 17.081a.846.846 0 0 1-.835.835H2.835A.846.846 0 0 1 2 19.081V4.835C2 4.382 2.383 4 2.835 4H17.04c.452 0 .835.382.835.835v14.246z"/>
-                            <path d="M4.917 6.958h2v2h-2zM12.959 6.958h2v2h-2zM8.938 6.958h2v2h-2zM4.917 10.958h2v2h-2zM12.959 10.958h2v2h-2zM8.938 10.958h2v2h-2zM4.917 14.942h2v2h-2zM12.959 14.942h2v2h-2zM8.938 14.942h2v2h-2z"/>
-                        </svg>
+                        <a href="#" class="search__calendar">
+                            <svg version="1" xmlns="http://www.w3.org/2000/svg" width="19.875"
+                                 height="21.916" viewBox="0 0 19.875 21.916">
+                                <path d="M17.04 2h-2.081V0h-2v2H6.917V0h-2v2H2.835A2.842 2.842 0 0 0 0 4.835v14.246a2.842 2.842 0 0 0 2.835 2.835H17.04a2.842 2.842 0 0 0 2.835-2.835V4.835A2.842 2.842 0 0 0 17.04 2zm.835 17.081a.846.846 0 0 1-.835.835H2.835A.846.846 0 0 1 2 19.081V4.835C2 4.382 2.383 4 2.835 4H17.04c.452 0 .835.382.835.835v14.246z"/>
+                                <path d="M4.917 6.958h2v2h-2zM12.959 6.958h2v2h-2zM8.938 6.958h2v2h-2zM4.917 10.958h2v2h-2zM12.959 10.958h2v2h-2zM8.938 10.958h2v2h-2zM4.917 14.942h2v2h-2zM12.959 14.942h2v2h-2zM8.938 14.942h2v2h-2z"/>
+                            </svg>
+                        </a>
                         <label class="search__label" for="data-out">дата выезда:</label>
                         <input class="search__input-data" id="data-out" type="date" name="departure" value="">
-                        <svg class="search__calendar search__calendar--out" version="1"
-                             xmlns="http://www.w3.org/2000/svg" width="19.875"
-                             height="21.916" viewBox="0 0 19.875 21.916">
-                            <path d="M17.04 2h-2.081V0h-2v2H6.917V0h-2v2H2.835A2.842 2.842 0 0 0 0 4.835v14.246a2.842 2.842 0 0 0 2.835 2.835H17.04a2.842 2.842 0 0 0 2.835-2.835V4.835A2.842 2.842 0 0 0 17.04 2zm.835 17.081a.846.846 0 0 1-.835.835H2.835A.846.846 0 0 1 2 19.081V4.835C2 4.382 2.383 4 2.835 4H17.04c.452 0 .835.382.835.835v14.246z"/>
-                            <path d="M4.917 6.958h2v2h-2zM12.959 6.958h2v2h-2zM8.938 6.958h2v2h-2zM4.917 10.958h2v2h-2zM12.959 10.958h2v2h-2zM8.938 10.958h2v2h-2zM4.917 14.942h2v2h-2zM12.959 14.942h2v2h-2zM8.938 14.942h2v2h-2z"/>
-                        </svg>
+                        <a href="#" class="search__calendar search__calendar--out">
+                            <svg version="1"
+                                 xmlns="http://www.w3.org/2000/svg" width="19.875"
+                                 height="21.916" viewBox="0 0 19.875 21.916">
+                                <path d="M17.04 2h-2.081V0h-2v2H6.917V0h-2v2H2.835A2.842 2.842 0 0 0 0 4.835v14.246a2.842 2.842 0 0 0 2.835 2.835H17.04a2.842 2.842 0 0 0 2.835-2.835V4.835A2.842 2.842 0 0 0 17.04 2zm.835 17.081a.846.846 0 0 1-.835.835H2.835A.846.846 0 0 1 2 19.081V4.835C2 4.382 2.383 4 2.835 4H17.04c.452 0 .835.382.835.835v14.246z"/>
+                                <path d="M4.917 6.958h2v2h-2zM12.959 6.958h2v2h-2zM8.938 6.958h2v2h-2zM4.917 10.958h2v2h-2zM12.959 10.958h2v2h-2zM8.938 10.958h2v2h-2zM4.917 14.942h2v2h-2zM12.959 14.942h2v2h-2zM8.938 14.942h2v2h-2z"/>
+                            </svg>
+                        </a>
                         <div class="search__data-adult-inner">
                             <label class="search__label" for="data-adult">взрослые:</label>
                             <input class="search__input-number" id="data-adult" type="number" min="1" name="adult"
                                    value="2">
-                            <svg class="search__minus" version="1" xmlns="http://www.w3.org/2000/svg" width="9.917"
-                                 height="1.917" viewBox="0 0 9.917 1.917">
-                                <path d="M0 0h9.917v1.917H0z"/>
-                            </svg>
-                            <svg class="search__plus" version="1" xmlns="http://www.w3.org/2000/svg" width="9.917"
-                                 height="9.917" viewBox="0 0 9.917 9.917">
-                                <path d="M9.917 4h-4V0H4v4H0v1.917h4v4h1.917v-4h4z"/>
-                            </svg>
+                            <a href="#" class="search__minus">
+                                <svg version="1" xmlns="http://www.w3.org/2000/svg" width="9.917"
+                                     height="1.917" viewBox="0 0 9.917 1.917">
+                                    <path d="M0 0h9.917v1.917H0z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="search__plus">
+                                <svg version="1" xmlns="http://www.w3.org/2000/svg" width="9.917"
+                                     height="9.917" viewBox="0 0 9.917 9.917">
+                                    <path d="M9.917 4h-4V0H4v4H0v1.917h4v4h1.917v-4h4z"/>
+                                </svg>
+                            </a>
                         </div>
                         <div class="search__data-children-inner">
                             <label class="search__label" for="data-children">дети:</label>
                             <input class="search__input-number" id="data-children" type="number" min="0" name="children"
                                    value="0">
-                            <svg class="search__minus" version="1" xmlns="http://www.w3.org/2000/svg" width="9.917"
-                                 height="1.917" viewBox="0 0 9.917 1.917">
-                                <path d="M0 0h9.917v1.917H0z"/>
-                            </svg>
-                            <svg class="search__plus" version="1" xmlns="http://www.w3.org/2000/svg" width="9.917"
-                                 height="9.917" viewBox="0 0 9.917 9.917">
-                                <path d="M9.917 4h-4V0H4v4H0v1.917h4v4h1.917v-4h4z"/>
-                            </svg>
+                            <a href="#" class="search__minus">
+                                <svg version="1" xmlns="http://www.w3.org/2000/svg" width="9.917"
+                                     height="1.917" viewBox="0 0 9.917 1.917">
+                                    <path d="M0 0h9.917v1.917H0z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="search__plus">
+                                <svg version="1" xmlns="http://www.w3.org/2000/svg" width="9.917"
+                                     height="9.917" viewBox="0 0 9.917 9.917">
+                                    <path d="M9.917 4h-4V0H4v4H0v1.917h4v4h1.917v-4h4z"/>
+                                </svg>
+                            </a>
                         </div>
                         <button class="btn btn--search" type="submit" name="search">Найти</button>
                     </div>
@@ -238,16 +250,43 @@
             </div>
             <div class="page-footer__social">
                 <ul class="page-footer__links">
-                    <li><a class="page-footer__links-tw" href="#"><img src="#" alt="twitter"></a></li>
-                    <li><a class="page-footer__links-fb" href="#"><img src="#" alt="facebook"></a></li>
-                    <li><a class="page-footer__links-yt" href="#"><img src="#" alt="youtube"> </a></li>
+                    <li><a class="page-footer__links-tw" href="#">
+                        <svg version="1" xmlns="http://www.w3.org/2000/svg" width="17.5" height="14.663"
+                             viewBox="0 0 17.5 14.663">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M11.283.153c1.736-.484 3.074.264 3.685 1.15.694-.225 1.372-.47 2.072-.69-.004.841-.538 1.478-.883 1.728.704.165 1.343-.481 1.343-.481-.175.977-1.035 1.746-1.611 1.977-.239 6.592-3.272 10.956-10.382 10.823h-.46c-.422 0-4.29-.45-5.047-1.843 2.341.192 4.011-.412 4.835-1.15-.989-.293-2.761-.464-3.07-2.881.362.105.583.223 1.228.117C1.757 8.067.385 7.366.461 5.218c.294.319 1.1.523 1.381.461C1.117 5.444-.188 2.398.921.843 2.794 2.655 4.769 4.364 8.29 4.528c.216-2.24 1.171-3.74 2.993-4.375z"/>
+                        </svg>
+                    </a></li>
+                    <li><a class="page-footer__links-fb" href="#">
+                        <svg version="1" xmlns="http://www.w3.org/2000/svg" width="8.672" height="18.944"
+                             viewBox="0 0 8.672 18.944">
+                            <path d="M6.275 3.356h2.398V0H5.795C2.656.181 1.54 2.387 1.948 6.114H0v3.518h1.959v9.312h3.837V9.632h2.857V6.114H5.787c-.022-1.045-.037-2.405.488-2.758z"/>
+                        </svg>
+                    </a></li>
+                    <li><a class="page-footer__links-yt" href="#">
+                        <svg version="1" xmlns="http://www.w3.org/2000/svg" width="19.979" height="14.015"
+                             viewBox="0 0 19.979 14.015">
+                            <path d="M17.145 0H2.835A2.842 2.842 0 0 0 0 2.835v8.345a2.842 2.842 0 0 0 2.835 2.835h14.31a2.842 2.842 0 0 0 2.835-2.835V2.835A2.844 2.844 0 0 0 17.145 0zM7.036 10.392V3.623l6.769 3.384-6.769 3.385z"/>
+                        </svg>
+                    </a></li>
                 </ul>
             </div>
             <div class="page-footer__copyright">
                 <span>website by</span>
-                <a class="btn btn--copyright" href="#"><img src="#" alt="A"></a>
+                <a class="btn btn--copyright" href="#">
+                    <svg version="1" xmlns="http://www.w3.org/2000/svg" width="25.988" height="29.922"
+                         viewBox="0 0 25.988 29.922">
+                        <path d="M0 0h25.988v29.922l-12.994-4.811L0 29.922V0zm20.154 17.895c-.241 0-.509-.006-.801-.018-.293-.014-.508-.051-.645-.116a1.03 1.03 0 0 1-.5-.469c-.107-.21-.162-.492-.162-.854 0-.394.018-1.211.055-2.457.035-1.244.054-2.318.054-3.226 0-.858-.146-1.556-.439-2.089a3.059 3.059 0 0 0-1.186-1.223 5.036 5.036 0 0 0-1.759-.571 15.18 15.18 0 0 0-2.143-.14c-.562 0-1.172.068-1.83.199a7.427 7.427 0 0 0-1.746.561 4.39 4.39 0 0 0-1.305.885c-.357.357-.536.76-.536 1.209 0 .521.174.946.52 1.271.346.323.857.486 1.533.486.476 0 .827-.043 1.057-.132a2.08 2.08 0 0 0 .621-.374c.139-.119.242-.283.314-.486.072-.205.109-.375.109-.512 0-.306-.057-.621-.17-.951a4.738 4.738 0 0 1-.205-.734c.145-.104.335-.207.572-.308.236-.101.532-.151.885-.151.394 0 .711.09.952.266.241.177.417.393.53.651.104.225.172.501.205.831.031.327.048.593.048.795v1.154c-.468.225-1.206.48-2.22.767-1.013.285-1.881.56-2.604.825a9.04 9.04 0 0 0-1.044.471c-.316.17-.596.381-.838.64-.265.281-.47.604-.614.969-.146.366-.217.811-.217 1.333 0 .909.329 1.637.989 2.189.658.551 1.455.825 2.387.825.627 0 1.115-.044 1.465-.132.35-.089.715-.223 1.092-.396.289-.138.561-.303.814-.494a7.94 7.94 0 0 0 .79-.699h.071c.169.546.484.965.949 1.259.465.293 1.19.438 2.176.438.536 0 1.045-.064 1.525-.192s.896-.269 1.25-.421v-.879zm-6.021-1.302a3.134 3.134 0 0 1-.754.668c-.286.183-.65.271-1.094.271-.419 0-.771-.139-1.057-.42-.287-.282-.43-.738-.43-1.363 0-.475.084-.888.254-1.238.169-.349.403-.638.701-.862a5.284 5.284 0 0 1 1.087-.622c.442-.197.89-.371 1.342-.525l-.049 4.091z"/>
+                    </svg>
+                </a>
                 <span>for</span>
-                <a class="btn btn--copyright" href="#"><img src="#" alt="html academy"></a>
+                <a class="btn btn--copyright" href="#">
+                    <svg version="1" xmlns="http://www.w3.org/2000/svg" width="26.096" height="33.803"
+                         viewBox="0 0 26.096 33.803">
+                        <path d="M13.047 0L0 1.456v24.475l13.047 7.835v.037l13.049-7.872V1.558L13.047 0zm10.99 24.745l-10.989 6.622v-7.385l-6.369-2.858v-.021l6.373-2.816v-.02h.002v.011l6.365 2.814v-.006l.01.006v-1.234l-6.365-2.813-.004.003-.006-.003v.011h-.002v-.003L6.678 19.87v-1.235l5.849-2.585-1.386-.621-4.463 1.973v-1.234l3.078-1.361-1.386-.621-1.692.748V13.7l.307-.135-3.73-1.675 9.793-4.248V2.084l10.989 1.321v21.34z"/>
+                        <path d="M19.428 17.39l-4.47-1.977-1.388.622 5.858 2.589zM19.428 14.921l-1.694-.748-1.388.62 3.082 1.362z"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>

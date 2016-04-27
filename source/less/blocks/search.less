@@ -102,16 +102,30 @@
         top: 173px;
         right: 9px;
     }
+    &__calendar:hover,
+    &__minus:hover,
+    &__plus:hover {
+        fill: #000;
+    }
+    &__calendar:active,
+    &__calendar:focus,
+    &__minus:active,
+    &__minus:focus,
+    &__plus:active,
+    &__plus:focus {
+        fill: @light-blue;
+    }
+
     &__minus {
         position: absolute;
-        top: 85px;
+        top: 69px;
         left: 15px;
 
         fill: #c2c2c2;
     }
     &__plus {
         position: absolute;
-        top: 80px;
+        top: 72px;
         right: 15px;
 
         fill: #c2c2c2;

@@ -6,6 +6,7 @@
 
     font-size: 21px;
     line-height: 26px;
+    text-decoration: none;
 
     &--search {
         width: 100%;
@@ -29,7 +30,24 @@
     }
     &--copyright {
         color: #333;
-
         font-size: 14px;
+        padding-left: 20px;
+        padding-right: 20px;
+        position: relative;
+        /*display: inline-block;
+        width: 27px;
+        height: 31px;*/
+    }
+    &--copyright svg {
+        position: absolute;
+        top: -7px;
+        left: 5px;
+    }
+    &--copyright svg:hover {
+        fill: @light-blue;
+    }
+    &--copyright svg:focus,
+    &--copyright svg:active {
+        fill: #bdbbbc;
     }
 }

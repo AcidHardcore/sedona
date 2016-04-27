@@ -29,11 +29,52 @@
         font-size: 0;
     }
     &__links li {
-        display: inline;
+        position: relative;
+
+        display: inline-block;
+
+        width: 46px;
+        height: 48px;
+        margin-right: 6px;
+
+        outline: 1px mediumvioletred;
+        background-color: @light-blue;
 
         font-size: 14px;
     }
+    &__links li:hover {
+        background-color: #669ec0;
+    }
+    &__links li:focus,
+    &__links li:active {
+        background-color: #5496bd;
+    }
+    &__links li:last-child {
+        margin-right: 0;
+    }
+    &__links a {
+        position: absolute;
+    }
+    &__links-tw {
+        top: 15px;
+        left: 14px;
+    }
+    &__links-fb {
+        top: 11px;
+        left: 18px;
+    }
+    &__links-yt {
+        top: 15px;
+        left: 13px;
+    }
     &__copyright {
         padding-bottom: 25px;
+    }
+    &__links svg {
+        fill: #fff;
+    }
+    &__links svg:focus,
+    &__links svg:active {
+        fill: #818181;
     }
 }
