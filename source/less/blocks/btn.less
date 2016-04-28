@@ -1,53 +1,65 @@
 @import "./../variables";
 
-.btn {
-    color: #fff;
+.btn
+{
+    text-decoration: none;
+
+
     border: 0;
 
     font-size: 21px;
     line-height: 26px;
-    text-decoration: none;
 
-    &--search {
+    &--search
+    {
         width: 100%;
         margin-bottom: 48px;
         padding-top: 17px;
         padding-bottom: 17px;
-
+        color: #fff;
         background-color: @light-blue;
     }
-    &--search:hover {
+    &--search:hover
+    {
         border: 0;
         outline: 0;
         background-color: #669ec0;
     }
     &--search:focus,
-    &--search:active {
+    &--search:active
+    {
         color: #94b9d2;
         border: 0;
         outline: 0;
         background-color: #5496bd;
     }
-    &--copyright {
-        color: #333;
-        font-size: 14px;
-        padding-left: 20px;
-        padding-right: 20px;
+    &--copyright
+    {
         position: relative;
-        /*display: inline-block;
-        width: 27px;
+
+        padding-right: 20px;
+        padding-left: 20px;
+
+        color: #333;
+
+        font-size: 14px;
+        display: inline-block;
+        /*width: 27px;
         height: 31px;*/
     }
-    &--copyright svg {
+    &--copyright svg
+    {
         position: absolute;
-        top: -7px;
+        top: -19px;
         left: 5px;
     }
-    &--copyright svg:hover {
+    &--copyright svg:hover
+    {
         fill: @light-blue;
     }
-    &--copyright svg:focus,
-    &--copyright svg:active {
+    //&--copyright svg:focus,
+    &--copyright svg:active
+    {
         fill: #bdbbbc;
     }
 }

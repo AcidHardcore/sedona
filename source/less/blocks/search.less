@@ -1,6 +1,7 @@
 @import "./../variables";
 
-.search {
+.search
+{
     text-align: center;
 
     color: #000;
@@ -8,7 +9,8 @@
 
     font-weight: 700;
     line-height: 26px;
-    &__title {
+    &__title
+    {
         padding-top: 35px;
         padding-bottom: 20px;
 
@@ -17,42 +19,49 @@
 
         font-size: 18px;
     }
-    &__title-inner {
+    &__title-inner
+    {
         max-width: 300px;
         margin: 0 auto;
     }
-    & form {
+    & form
+    {
         text-align: left;
 
         background-color: #fff;
     }
-    &__form-inner {
+    &__form-inner
+    {
         position: relative;
 
         max-width: 280px;
         margin: 0 auto;
     }
-    &__label {
+    &__label
+    {
         display: block;
 
         margin-bottom: 15px;
         margin-left: 20px;
     }
-    &__label:first-child {
+    &__label:first-child
+    {
         padding-top: 30px;
     }
-    &__input-data {
+    &__input-data
+    {
         display: block;
 
         width: 100%;
         margin-bottom: 30px;
         padding-right: 32px;
         padding-left: 15px;
-
+        height: 28px;
         border: 0;
         background-color: #f2f2f2;
     }
-    &__data-adult-inner {
+    &__data-adult-inner
+    {
         position: relative;
 
         float: left;
@@ -60,7 +69,8 @@
         width: 115px;
         padding-bottom: 45px;
     }
-    &__data-children-inner {
+    &__data-children-inner
+    {
         position: relative;
 
         float: right;
@@ -68,9 +78,10 @@
         width: 115px;
         padding-bottom: 45px;
     }
-    &__input-number {
+    &__input-number
+    {
         display: block;
-
+        height: 28px;
         width: 100%;
         padding-left: 52px;
 
@@ -78,7 +89,8 @@
         background-color: #f2f2f2;
     }
     &__input-data:hover,
-    &__input-number:hover {
+    &__input-number:hover
+    {
         border: 0;
         outline: 0;
         background-color: #ebebeb;
@@ -86,25 +98,30 @@
     &__input-data:active,
     &__input-number:active,
     &__input-data:focus,
-    &__input-number:focus {
+    &__input-number:focus
+    {
         border: 1px solid #e5e5e5;
         outline: 0;
         background-color: #fff;
     }
-    &__calendar {
+    &__calendar
+    {
         position: absolute;
         top: 74px;
         right: 9px;
+        height: 22px;
 
         fill: #c2c2c2;
     }
-    &__calendar--out {
+    &__calendar--out
+    {
         top: 173px;
         right: 9px;
     }
     &__calendar:hover,
     &__minus:hover,
-    &__plus:hover {
+    &__plus:hover
+    {
         fill: #000;
     }
     &__calendar:active,
@@ -112,18 +129,21 @@
     &__minus:active,
     &__minus:focus,
     &__plus:active,
-    &__plus:focus {
+    &__plus:focus
+    {
         fill: @light-blue;
     }
 
-    &__minus {
+    &__minus
+    {
         position: absolute;
         top: 69px;
         left: 15px;
 
         fill: #c2c2c2;
     }
-    &__plus {
+    &__plus
+    {
         position: absolute;
         top: 72px;
         right: 15px;

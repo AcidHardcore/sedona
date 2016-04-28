@@ -1,24 +1,30 @@
 @import "./../variables";
 
-.reason {
+.reason
+{
     background-color: @light-blue;
 
-    &--features {
+    &--features
+    {
         background-color: #fff;
     }
-    &__inner {
+    &__inner
+    {
         max-width: 295px;
         margin: 0 auto;
     }
-    &__inner--features {
+    &__inner--features
+    {
         max-width: 270px;
 
         text-align: left;
     }
-    &--bg {
+    &--bg
+    {
         background-color: #eee;
     }
-    &--delimiter::after {
+    &--delimiter::after
+    {
         position: relative;
 
         display: block;
@@ -30,7 +36,8 @@
 
         border-bottom: 1px solid #d6d6d6;
     }
-    &__title {
+    &__title
+    {
         margin: 0;
         padding-top: 40px;
         padding-bottom: 20px;
@@ -40,7 +47,8 @@
         font-size: 21px;
         line-height: 26px;
     }
-    &__title--features {
+    &__title--features
+    {
         position: relative;
 
         padding-top: 40px;
@@ -50,7 +58,8 @@
         font-size: 18px;
         font-weight: 700;
     }
-    &__number {
+    &__number
+    {
         position: relative;
         z-index: 2;
 
@@ -63,7 +72,8 @@
 
         background-color: #eee;
     }
-    &__number-inner::after {
+    &__number-inner::after
+    {
         position: relative;
         z-index: 1;
         top: -35px;
@@ -77,56 +87,69 @@
 
         border-bottom: 1px solid #a8a8a8;
     }
-    &__desc {
+    &__desc
+    {
         margin: 0;
         padding-bottom: 45px;
     }
-    &__desc--features {
+    &__desc--features
+    {
         padding-bottom: 0;
         padding-left: 45px;
     }
-    &__desc--features:last-child {
+    &__desc--features:last-child
+    {
         padding-bottom: 45px;
     }
     &__inner--color,
-    &__title--color {
+    &__title--color
+    {
         color: #fff;
     }
-    &__number--color {
+    &__number--color
+    {
         background-color: @light-blue;
     }
-    &__number-inner--color::after {
+    &__number-inner--color::after
+    {
         border-bottom: 1px solid #fff;
     }
-    &__image {
+    &__image
+    {
         height: 256px;
-        @media @mobile-widths-only {
+        @media @mobile-widths-only
+        {
             height: 260px;
         }
     }
-    &__image--city {
+    &__image--city
+    {
         background-image: url("./../img/photo-city@1x.jpg");
         background-repeat: no-repeat;
         background-position: center;
         -webkit-background-size: cover;
-        background-size: cover;
+                background-size: cover;
 
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
+        {
             background-image: url("./../img/photo-city@2x.jpg");
         }
     }
-    &__image--bridge {
+    &__image--bridge
+    {
         background-image: url("./../img/photo-bridge@1x.jpg");
         background-repeat: no-repeat;
         background-position: center;
         -webkit-background-size: cover;
-        background-size: cover;
+                background-size: cover;
 
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
+        {
             background-image: url("./../img/photo-bridge@2x.jpg");
         }
     }
-    &--gradient::before {
+    &--gradient::before
+    {
         display: block;
 
         width: 100%;
@@ -142,17 +165,20 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    &__house {
+    &__house
+    {
         position: absolute;
         top: 31px;
         left: -1px;
     }
-    &__gift {
+    &__gift
+    {
         position: absolute;
         top: 28px;
         left: 2px;
     }
-    &__burger {
+    &__burger
+    {
         position: absolute;
         top: 34px;
         left: -1px;

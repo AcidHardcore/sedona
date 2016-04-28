@@ -1,23 +1,28 @@
-.container {
+.container
+{
     /*@media (@mobile-widths-only)
     {*/
     max-width: 320px;
     margin: 0 auto;
     /*}*/
-    @media (@tablet-widths) {
+    @media (@tablet-widths)
+    {
         width: 768px;
     }
 
-    @media (@desktop-widths) {
+    @media (@desktop-widths)
+    {
         width: 1280px;
     }
 }
 
-.fluid-container {
+.fluid-container
+{
     .container;
 }
 
-body {
+body
+{
     min-width: 320px;
     margin: 0;
     padding: 0;
@@ -33,18 +38,23 @@ body {
 }
 
 /*defend from overload img*/
-img,
-svg {
+img
+{
     max-width: 100%;
     height: auto;
 }
+//svg {
+//    display: block;
+//}
 
-html {
+html
+{
     box-sizing: border-box;
 }
 
 *,
 *:before,
-*:after {
+*:after
+{
     box-sizing: inherit;
 }
