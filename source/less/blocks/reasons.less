@@ -1,16 +1,19 @@
 @import "./../variables";
 
-.reasons {
+.reasons
+{
     position: relative;
     //.container;
     /*max-width: 320px;
     margin: 0 auto;*/
 
     text-align: center;
-    &__inner {
+    &__inner
+    {
         margin: 0 auto;
     }
-    &__intro {
+    &__intro
+    {
         position: relative;
 
         height: 390px;
@@ -20,11 +23,13 @@
         background-position: center;
         background-size: cover;
 
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
+        {
             background-image: url("./../img/photo-background@2x.jpg");
         }
     }
-    &__intro::after {
+    &__intro::after
+    {
         position: absolute;
         bottom: 0;
 
@@ -43,50 +48,66 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    &__logo-triangle {
+    &__logo-triangle
+    {
         position: absolute;
         z-index: 1;
         top: -62px;
         left: 90px;
-        fill: @light-blue;
+
         width: 137px;
         height: 71px;
+
+        fill: @light-blue;
     }
-    &__welcome {
+    &__welcome
+    {
+        display: block;
+
+        box-sizing: content-box;
         width: 143px;
         height: 34px;
-        fill: @light-blue;
-        display: block;
-        padding-top: 30px;
         margin: 0 auto;
-        box-sizing: content-box;
+        padding-top: 30px;
+
+        fill: @light-blue;
     }
-    &__tothegorgeous {
+    &__tothegorgeous
+    {
+        display: block;
+
+        box-sizing: content-box;
         width: 196px;
         height: 23px;
-        display: block;
         margin: 0 auto;
-        fill: #766357;
-        box-sizing: content-box;
         padding-bottom: 55px;
+
+        fill: #766357;
     }
-    &__sedona {
+    &__sedona
+    {
         display: block;
-        margin: 0 auto;
+
+        box-sizing: content-box;
         width: 280px;
         height: 49px;
-        fill: #fff;
+        margin: 0 auto;
         padding-bottom: 60px;
-        box-sizing: content-box;
+
+        fill: #fff;
     }
-    &__becausecanyon {
+    &__becausecanyon
+    {
+        display: block;
+
         width: 196px;
         height: 80px;
-        display: block;
         margin: 0 auto;
+
         fill: #fff;
     }
-    &__title {
+    &__title
+    {
         max-width: 295px;
         margin: 0 auto;
         padding-top: 40px;
@@ -98,7 +119,8 @@
         font-weight: 700;
         line-height: 26px;
     }
-    &__desc {
+    &__desc
+    {
         max-width: 295px;
         margin: 0 auto;
         padding-bottom: 30px;
