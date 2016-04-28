@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-    // sass = require('gulp-sass'),
+// sass = require('gulp-sass'),
     cleancss = require('gulp-clean-css'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -19,7 +19,10 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     newer = require('gulp-newer'),
     del = require('del'),
-    gcmq = require('gulp-group-css-media-queries');
+    gcmq = require('gulp-group-css-media-queries'),
+    svgstore = require('gulp-svgstore'),
+    svgmin = require('gulp-svgmin'),
+    cheerio = require('gulp-cheerio');
 
 // Запуск `NODE_ENV=production npm start [задача]` приведет к сборке без sourcemaps
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'dev';
@@ -62,7 +65,7 @@ gulp.task('css', function () {
 
 // coping and optimisation images
 gulp.task('img', function () {
-    console.log('---------- Copy and optimisation images');
+    // console.log('---------- Copy and optimisation images');
     return gulp.src('./source/img/*.{jpg,jpeg,gif,png,svg}', {since: gulp.lastRun('img')}) // only new files are change
         .pipe(newer('./build/img/'))  // keep only new files
         .pipe(imagemin({
@@ -74,8 +77,30 @@ gulp.task('img', function () {
         .pipe(debug({title: "img:"}));
 });
 
+//  SVG-sprite compilation
+gulp.task('svgstore', function () {
+    console.log('---------- Сборка SVG спрайта');
+    return gulp.src('./source/img/*.svg')
+        .pipe(svgmin(function (file) {
+            return {
+                plugins: [{
+                    cleanupIDs: {
+                        minify: true
+                    }
+                }]
+            }
+        }))
+        .pipe(svgstore({inlineSvg: true}))
+        .pipe(cheerio(function ($) {
+            $('svg').attr('style', 'display:none');
+        }))
+        .pipe(rename('sprite-svg--ls.svg'))
+        .pipe(gulp.dest('./build/img/'))
+        .pipe(debug({title: "SVG-sprite:"}));
+});
+
 //Coping html files
-gulp.task('html', function (){
+gulp.task('html', function () {
     console.log('---------- Coping html files');
     return gulp.src('./source/*.html', {since: gulp.lastRun('html')})
         .pipe(gulp.dest('./build/'))
@@ -106,7 +131,7 @@ gulp.task('serve', function () {
 gulp.task('clean', function () {
     console.log('---------- cleaning of build folder');
     return del([
-         './build/**/*.*',
+        './build/**/*.*',
         '!' + './build/readme.md'
     ]);
 });
