@@ -22,7 +22,8 @@ var gulp = require('gulp'),
     gcmq = require('gulp-group-css-media-queries'),
     svgstore = require('gulp-svgstore'),
     svgmin = require('gulp-svgmin'),
-    cheerio = require('gulp-cheerio');
+    cheerio = require('gulp-cheerio'),
+    svgfallback = require('gulp-svgfallback');
 
 // Запуск `NODE_ENV=production npm start [задача]` приведет к сборке без sourcemaps
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'dev';
@@ -79,7 +80,7 @@ gulp.task('img', function () {
 
 //  SVG-sprite compilation
 gulp.task('svgstore', function () {
-    console.log('---------- Сборка SVG спрайта');
+    console.log('---------- SVG-sprite compilation');
     return gulp.src('./source/img/*.svg')
         .pipe(svgmin(function (file) {
             return {
@@ -97,6 +98,16 @@ gulp.task('svgstore', function () {
         .pipe(rename('sprite-svg--ls.svg'))
         .pipe(gulp.dest('./build/img/'))
         .pipe(debug({title: "SVG-sprite:"}));
+});
+
+// Compile SVG fall back sprite
+gulp.task('svgfallback', function () {
+    console.log('---------- Compile SVG fall back sprite');
+    return gulp
+        .src('./source/img/*.svg')
+        .pipe(svgfallback())
+        .pipe(gulp.dest('./build/test/'))
+        .pipe(debug({title: "SVG fall back sprite:"}));
 });
 
 //Coping html files
@@ -138,5 +149,5 @@ gulp.task('clean', function () {
 
 //default task - auto running on WebStorm start
 gulp.task('default',
-    gulp.series('clean', 'comb', gulp.parallel('css', 'img', 'html'), gulp.parallel('watch', 'serve'))
+    gulp.series('comb', /*gulp.parallel('css', 'img', 'html'),*/ gulp.parallel('watch', 'serve'))
 );
