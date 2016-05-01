@@ -1,28 +1,30 @@
-.container
-{
-    /*@media (@mobile-widths-only)
-    {*/
-    max-width: 320px;
+.container,
+.fluid-container {
+
+    width: 320px;
     margin: 0 auto;
-    /*}*/
-    @media (@tablet-widths)
-    {
+
+    @media (@tablet-widths) {
         width: 768px;
     }
 
-    @media (@desktop-widths)
-    {
-        width: 1280px;
+    @media (@desktop-widths) {
+        width: 1200px;
     }
 }
 
-.fluid-container
-{
-    .container;
+//.fluid-container
+//{
+//    .container;
+//}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-body
-{
+body {
     min-width: 320px;
     margin: 0;
     padding: 0;
@@ -38,23 +40,21 @@ body
 }
 
 /*defend from overload img*/
-img
-{
+img {
     max-width: 100%;
     height: auto;
 }
+
 //svg {
 //    display: block;
 //}
 
-html
-{
+html {
     box-sizing: border-box;
 }
 
 *,
 *:before,
-*:after
-{
+*:after {
     box-sizing: inherit;
 }

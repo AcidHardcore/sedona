@@ -1,0 +1,39 @@
+@import "../variables";
+
+.page-arrow {
+    position: absolute;
+    height: 36px;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    &--white {
+        bottom: 0;
+    }
+    &--white div {
+        border-bottom: 76px solid #ffffff;
+    }
+    &--blue{
+        top: -36px;
+    }
+    &--blue div {
+        border-bottom: 76px solid @light-blue;
+
+    }
+    &__left-figure {
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 0;
+        right: 0;
+        border-left: 384px solid transparent;
+    }
+    &__right-figure {
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 0;
+        left: 0;
+        border-right: 384px solid transparent;
+    }
+
+}
