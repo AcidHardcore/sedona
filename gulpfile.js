@@ -31,7 +31,7 @@ const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'dev';
 //Less comb
 gulp.task('comb', function () {
     console.log('---------- LESS combing');
-    return gulp.src('./source/less/**/*.less', {since: gulp.lastRun('comb')}) // only  files were change
+    return gulp.src('./source/less/blocks/*.less', {since: gulp.lastRun('comb')}) // only  files were change
         .pipe(csscomb())
         .pipe(debug({title: "cssComb:"}))
         .pipe(gulp.dest('./source/less/'))
@@ -42,7 +42,7 @@ gulp.task('css', function () {
     console.log('---------- LESS compile');
     return gulp.src('./source/less/style.less')
         .pipe(gulpIf(isDev, sourcemaps.init()))
-        // .pipe(debug({title: "LESS:"}))
+        .pipe(debug({title: "LESS:"}))
         .pipe(less())
         .on('error', notify.onError(function (err) {
             return {
@@ -51,17 +51,17 @@ gulp.task('css', function () {
             }
         }))
         .pipe(gcmq())
-        // .pipe(debug({title: "group media queries:"}))
+        .pipe(debug({title: "group media queries:"}))
         .pipe(autoprefixer({browsers: ['last 2 version']}))
-        // .pipe(debug({title: "autoPrefixer:"}))
+        .pipe(debug({title: "autoPrefixer:"}))
          .pipe(csscomb())
-         // .pipe(debug({title: "cssComb:"}))
+         .pipe(debug({title: "cssComb:"}))
         .pipe(gulpIf(!isDev, cleancss()))
-        // .pipe(gulpIf(!isDev, debug({title: "cleenCss:"})))
+        .pipe(gulpIf(!isDev, debug({title: "cleenCss:"})))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulpIf(isDev, sourcemaps.write()))
-        .pipe(gulp.dest('./build/css/'));
-        // .pipe(debug({title: "css:"}));
+        .pipe(gulp.dest('./build/css/'))
+        .pipe(debug({title: "css:"}));
 });
 
 // coping and optimisation images
@@ -149,5 +149,5 @@ gulp.task('clean', function () {
 
 //default task - auto running on WebStorm start
 gulp.task('default',
-    gulp.series('comb', /*gulp.parallel('css', 'img', 'html'),*/ gulp.parallel('watch', 'serve'))
+    gulp.series(/*'comb',*/ /*gulp.parallel('css', 'img', 'html'),*/ gulp.parallel('watch', 'serve'))
 );

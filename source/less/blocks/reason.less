@@ -1,34 +1,59 @@
 @import "./../variables";
 
-.reason
-{
-    position: relative;
+.reason {
 
     text-align: center;
 
     background-color: @light-blue;
+    @media (@tablet-widths) {
+        display: flex;
+        flex-direction: row;
+    }
 
-    &--features
-    {
+    &--features {
         background-color: #fff;
     }
-    &__inner
-    {
+    &__inner {
         max-width: 295px;
         margin: 0 auto;
+        @media (@tablet-widths) {
+            max-width: none;
+            margin: 0;
+        }
     }
-    &__inner--features
-    {
+    &__inner--flex-basis {
+        @media (@tablet-widths) {
+            flex-basis: 33%;
+        }
+    }
+    &__inner--features {
         max-width: 270px;
 
         text-align: left;
+        @media (@tablet-widths) {
+            max-width: 33%;
+            height: 330px;
+            text-align: center;
+            flex-basis: 33%;
+        }
     }
-    &--bg
-    {
+    @media (@tablet-widths) {
+        &__inner--order1 {
+            order: 1;
+        }
+
+        &__inner--order2 {
+            order: 2;
+        }
+
+        &__inner--order3 {
+            order: 3;
+        }
+    }
+    &--bg {
         background-color: #eee;
     }
-    &--delimiter::after
-    {
+    &--delimiter::after {
         position: relative;
 
         display: block;
@@ -39,9 +64,12 @@
         content: "";
 
         border-bottom: 1px solid #d6d6d6;
+        @media (@tablet-widths) {
+            display: none;
+        }
     }
-    &__title
-    {
+    &__title {
+        position: relative;
         margin: 0;
         padding-top: 40px;
         padding-bottom: 20px;
@@ -50,10 +78,15 @@
 
         font-size: 21px;
         line-height: 26px;
+        @media (@tablet-widths) {
+            padding-top: 50px;
+            padding-right: 61px;
+            padding-bottom: 9px;
+            padding-left: 61px;
+        }
     }
-    &__title--features
-    {
-        position: relative;
+    &__title--features {
+        //position: relative;
 
         padding-top: 40px;
         padding-bottom: 25px;
@@ -61,9 +94,14 @@
 
         font-size: 18px;
         font-weight: 700;
+        @media (@tablet-widths) {
+            padding-top: 160px;
+            padding-left: 0;
+            padding-bottom: 30px;
+            padding-right: 0;
+        }
     }
-    &__number
-    {
+    &__number {
         position: relative;
         z-index: 2;
 
@@ -71,13 +109,12 @@
 
         margin: 0;
         padding-right: 5px;
-        padding-bottom: 25px;
+        padding-bottom: 20px;
         padding-left: 5px;
 
         background-color: #eee;
     }
-    &__number-inner::after
-    {
+    &__number-inner::after {
         position: relative;
         z-index: 1;
         top: -35px;
@@ -91,64 +128,68 @@
 
         border-bottom: 1px solid #a8a8a8;
     }
-    &__desc
-    {
+    &__desc {
         margin: 0;
         padding-bottom: 45px;
-    }
-    &__desc--features
-    {
-        padding-bottom: 0;
-        padding-left: 45px;
-    }
-    &__desc--features:last-child
-    {
-        padding-bottom: 45px;
-    }
-    &__inner--color,
-    &__title--color
-    {
-        color: #fff;
-    }
-    &__number--color
-    {
-        background-color: @light-blue;
-    }
-    &__number-inner--color::after
-    {
-        border-bottom: 1px solid #fff;
-    }
-    &__image
-    {
-        height: 256px;
-        @media @mobile-widths-only
-        {
-            height: 260px;
+        @media (@tablet-widths) {
+            padding-right: 45px;
+            padding-bottom: 40px;
+            padding-left: 45px;
         }
     }
-    &__image--city
-    {
+    &__desc--features {
+        padding-bottom: 0;
+        padding-left: 45px;
+        @media (@tablet-widths) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+    }
+    &__desc--features:last-child {
+        padding-bottom: 45px;
+        @media (@tablet-widths) {
+            padding-bottom: 0;
+        }
+    }
+    &__inner--color,
+    &__title--color {
+        color: #fff;
+    }
+    &__number--color {
+        background-color: @light-blue;
+    }
+    &__number-inner--color::after {
+        border-bottom: 1px solid #fff;
+    }
+    &__image {
+        @media (@mobile-widths-only) {
+            height: 260px;
+        }
+        @media (@tablet-widths) {
+            height: 256px;
+
+            flex-basis: 67%;
+        }
+    }
+    &__image--city {
         background-image: url("./../img/photo-city@1x.jpg");
         background-repeat: no-repeat;
         background-position: center;
         -webkit-background-size: cover;
-                background-size: cover;
+        background-size: cover;
 
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
-        {
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
             background-image: url("./../img/photo-city@2x.jpg");
         }
     }
-    &__image--bridge
-    {
+    &__image--bridge {
         background-image: url("./../img/photo-bridge@1x.jpg");
         background-repeat: no-repeat;
         background-position: center;
         -webkit-background-size: cover;
-                background-size: cover;
+        background-size: cover;
 
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
-        {
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
             background-image: url("./../img/photo-bridge@2x.jpg");
         }
     }
@@ -170,31 +211,56 @@
         background-repeat: no-repeat;
         background-size: cover;
     }*/
-    &__house
-    {
+    &__house {
         position: absolute;
         top: 31px;
         left: -1px;
 
         width: 37px;
         height: 37px;
+        @media (@tablet-widths) {
+            width: 74px;
+            height: 70px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+        }
+
     }
-    &__gift
-    {
+    &__gift {
         position: absolute;
         top: 28px;
         left: 2px;
 
         width: 32px;
         height: 38px;
+        @media (@tablet-widths) {
+            width: 74px;
+            height: 70px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
     }
-    &__burger
-    {
+    &__burger {
         position: absolute;
         top: 34px;
         left: -1px;
 
         width: 37px;
         height: 35px;
+        @media (@tablet-widths) {
+            width: 74px;
+            height: 70px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
     }
 }

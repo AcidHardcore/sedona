@@ -1,6 +1,7 @@
 @import "../variables";
 
-.page-arrow {
+.page-arrow
+{
     position: absolute;
 
     overflow: hidden;
@@ -8,19 +9,24 @@
     width: 100%;
     height: 36px;
     margin: 0;
-    &--white {
+    &--white
+    {
         bottom: 0;
     }
-    &--white div {
+    &--white div
+    {
         border-bottom: 76px solid #fff;
     }
-    &--blue {
+    &--blue
+    {
         top: -36px;
     }
-    &--blue div {
+    &--blue div
+    {
         border-bottom: 76px solid @light-blue;
     }
-    &__left-figure {
+    &__left-figure
+    {
         position: absolute;
         top: 0;
         right: 0;
@@ -30,7 +36,8 @@
 
         border-left: 800px solid transparent;
     }
-    &__right-figure {
+    &__right-figure
+    {
         position: absolute;
         top: 0;
         left: 0;
@@ -40,26 +47,29 @@
 
         border-right: 800px solid transparent;
     }
-    &-inner{
+    &-inner
+    {
         display: none;
     }
-    @media (@tablet-widths) {
-        &--inner {
-            width: 50%;
+    @media (@tablet-widths)
+    {
+        &--inner
+        {
             left: 25%;
+
+            width: 50%;
         }
-        &__left-figure--inner{
+        &__left-figure--inner
+        {
             border-left: 650px solid transparent;
-
         }
-        &__right-figure--inner {
+        &__right-figure--inner
+        {
             border-right: 650px solid transparent;
-
         }
-        &--blue{
+        &--blue
+        {
             display: none;
         }
     }
 }
-
-

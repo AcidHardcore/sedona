@@ -1,30 +1,36 @@
 @import "./../variables.less";
 
-.page-nav {
+.page-nav
+{
     position: relative;
 
     background-color: @light-blue;
-    &__list {
+    &__list
+    {
         margin: 0;
         padding: 0;
 
         list-style: none;
     }
 
-    & li {
+    & li
+    {
         position: relative;
 
         text-align: center;
     }
-    & a {
+    & a
+    {
         display: block;
 
         text-decoration: none;
 
         font-weight: 700;
     }
-    @media (@mobile-widths-only) {
-        & li {
+    @media (@mobile-widths-only)
+    {
+        & li
+        {
             box-shadow: 0 1px 0 0 rgba(0, 0, 0, .2),
             inset 0 1px 0 0 rgba(255, 255, 255, .2);
 
@@ -32,33 +38,39 @@
             line-height: 40px;
         }
 
-        & li:last-child {
+        & li:last-child
+        {
             box-shadow: 0 1px 0 0 rgba(1, 1, 1, .2),
             inset 0 1px 0 0 rgba(255, 255, 255, .2),
             inset 0 -2px 0 0 rgba(0, 0, 0, .2);
         }
 
-        & li:hover {
+        & li:hover
+        {
             background-color: #669ec0;
         }
 
         & li:focus,
-        & li:active {
+        & li:active
+        {
             background-color: #5496bd;
         }
 
-        & a {
+        & a
+        {
             padding: 8px 0;
 
             color: white;
         }
 
         & a:active,
-        & a:focus {
+        & a:focus
+        {
             color: #94b9d2;
         }
 
-        &::before {
+        &::before
+        {
             position: absolute;
             z-index: 2;
             top: 25px;
@@ -74,7 +86,8 @@
             background-color: white;
         }
 
-        &::after {
+        &::after
+        {
             position: absolute;
             top: 25px;
             right: 20px;
@@ -89,7 +102,8 @@
             background-color: white;
         }
 
-        &__collapse {
+        &__collapse
+        {
             position: absolute;
             right: 20px;
             bottom: auto;
@@ -100,15 +114,18 @@
             background-color: transparent;
         }
 
-        &__collapse:focus {
+        &__collapse:focus
+        {
             outline: 0;
         }
 
-        &__collapse span:first-child {
+        &__collapse span:first-child
+        {
             margin-top: 18px;
         }
 
-        &__row {
+        &__row
+        {
             display: block;
 
             width: 23px;
@@ -118,47 +135,59 @@
             background-color: @light-blue;
         }
     }
-    @media (@tablet-widths) {
-        & {
+    @media (@tablet-widths)
+    {
+        &
+        {
             background-color: #fff;
         }
 
-        &__list {
+        &__list
+        {
             display: flex;
             flex-direction: row;
+
             align-content: flex-end;
             //justify-content: space-around;
         }
 
-        & li {
-            flex-basis: 20%;
+        & li
+        {
             font-size: 14px;
             line-height: 26px;
+
+            flex-basis: 20%;
         }
 
-        & li:nth-child(3) {
+        & li:nth-child(3)
+        {
             margin-left: auto;
         }
 
-        & a {
+        & a
+        {
             padding: 15px 0;
 
             color: #000;
         }
 
-        & a:hover {
+        & a:hover
+        {
             color: @light-blue;
         }
 
-        & a:focus {
+        & a:focus
+        {
             color: #dadada;
         }
 
-        & a:active {
+        & a:active
+        {
             color: #604e43;
         }
 
-        &__collapse {
+        &__collapse
+        {
             display: none;
         }
     }
