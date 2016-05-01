@@ -42,7 +42,7 @@ gulp.task('css', function () {
     console.log('---------- LESS compile');
     return gulp.src('./source/less/style.less')
         .pipe(gulpIf(isDev, sourcemaps.init()))
-        .pipe(debug({title: "LESS:"}))
+        // .pipe(debug({title: "LESS:"}))
         .pipe(less())
         .on('error', notify.onError(function (err) {
             return {
@@ -51,17 +51,17 @@ gulp.task('css', function () {
             }
         }))
         .pipe(gcmq())
-        .pipe(debug({title: "group media queries:"}))
+        // .pipe(debug({title: "group media queries:"}))
         .pipe(autoprefixer({browsers: ['last 2 version']}))
-        .pipe(debug({title: "autoPrefixer:"}))
-        .pipe(csscomb())
-        .pipe(debug({title: "cssComb:"}))
+        // .pipe(debug({title: "autoPrefixer:"}))
+         .pipe(csscomb())
+         // .pipe(debug({title: "cssComb:"}))
         .pipe(gulpIf(!isDev, cleancss()))
-        .pipe(gulpIf(!isDev, debug({title: "cleenCss:"})))
+        // .pipe(gulpIf(!isDev, debug({title: "cleenCss:"})))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulpIf(isDev, sourcemaps.write()))
-        .pipe(gulp.dest('./build/css/'))
-        .pipe(debug({title: "css:"}));
+        .pipe(gulp.dest('./build/css/'));
+        // .pipe(debug({title: "css:"}));
 });
 
 // coping and optimisation images

@@ -1,18 +1,17 @@
-@import "./../variables";
+@import "./../variables.less";
 
 .reasons
 {
+    text-align: center;
 
     &__intro
     {
-        text-align: center;
         position: relative;
-        margin: 0 auto;
+
         height: 390px;
+        margin: 0 auto;
 
-
-        background-image: url("./../img/photo-background@1x.jpg");
-        background-repeat: no-repeat;
+        background: url("./../img/photo-background@1x.jpg") no-repeat;
         background-size: cover;
 
         @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
@@ -45,13 +44,13 @@
     {
         position: absolute;
         top: 47px;
-        margin: auto;
-        left: 0;
         right: 0;
+        left: 0;
 
         box-sizing: content-box;
         width: 143px;
         height: 34px;
+        margin: auto;
 
         fill: @light-blue;
     }
@@ -59,13 +58,13 @@
     {
         position: absolute;
         top: 91px;
-        left: 0;
         right: 0;
-        margin: auto;
+        left: 0;
 
         box-sizing: content-box;
         width: 196px;
         height: 23px;
+        margin: auto;
 
         fill: #766357;
     }
@@ -73,13 +72,13 @@
     {
         position: absolute;
         top: 173px;
-        left: 0;
         right: 0;
-        margin: auto;
+        left: 0;
 
         box-sizing: content-box;
         width: 280px;
         height: 49px;
+        margin: auto;
 
         fill: #fff;
     }
@@ -87,18 +86,18 @@
     {
         position: absolute;
         top: 287px;
-        left: 0;
         right: 0;
-        margin: auto;
+        left: 0;
 
         width: 196px;
         height: 80px;
+        margin: auto;
 
         fill: #fff;
     }
     &__title
     {
-        max-width: 295px;
+        width: 295px;
         margin: 0 auto;
         padding-top: 40px;
         padding-bottom: 40px;
@@ -111,10 +110,54 @@
     }
     &__desc
     {
-        max-width: 295px;
+        width: 295px;
         margin: 0 auto;
         padding-bottom: 50px;
 
         line-height: 26px;
+    }
+    @media (@tablet-widths)
+    {
+        &__intro
+        {
+            height: 515px;
+        }
+        &__welcome
+        {
+            top: 77px;
+
+            width: 189px;
+            height: 45px;
+        }
+        &__tothegorgeous
+        {
+            top: 133px;
+
+            width: 256px;
+            height: 30px;
+        }
+        &__sedona
+        {
+            top: 215px;
+
+            width: 457px;
+            height: 75px;
+        }
+        &__becausecanyon
+        {
+            top: 348px;
+
+            width: 296px;
+            height: 80px;
+        }
+        &__title
+        {
+            width: 500px;
+            font-size: 21px;
+        }
+        &__desc
+        {
+            width: 500px;
+        }
     }
 }
