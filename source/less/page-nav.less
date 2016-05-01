@@ -1,0 +1,194 @@
+@import "./../variables.less";
+
+.page-nav
+{
+    position: relative;
+
+    background-color: @light-blue;
+    &__list
+    {
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+    }
+
+    & li
+    {
+        position: relative;
+
+        text-align: center;
+    }
+    & a
+    {
+        display: block;
+
+        text-decoration: none;
+
+        font-weight: 700;
+    }
+    @media (@mobile-widths-only)
+    {
+        & li
+        {
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, .2),
+            inset 0 1px 0 0 rgba(255, 255, 255, .2);
+
+            font-size: 18px;
+            line-height: 40px;
+        }
+
+        & li:last-child
+        {
+            box-shadow: 0 1px 0 0 rgba(1, 1, 1, .2),
+            inset 0 1px 0 0 rgba(255, 255, 255, .2),
+            inset 0 -2px 0 0 rgba(0, 0, 0, .2);
+        }
+
+        & li:hover
+        {
+            background-color: #669ec0;
+        }
+
+        & li:focus,
+        & li:active
+        {
+            background-color: #5496bd;
+        }
+
+        & a
+        {
+            padding: 8px 0;
+
+            color: white;
+        }
+
+        & a:active,
+        & a:focus
+        {
+            color: #94b9d2;
+        }
+
+        &::before
+        {
+            position: absolute;
+            z-index: 2;
+            top: 25px;
+            right: 20px;
+
+            width: 23px;
+            height: 4px;
+
+            content: "";
+            transform: rotate(45deg);
+
+            border-radius: 1px;
+            background-color: white;
+        }
+
+        &::after
+        {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+
+            width: 23px;
+            height: 4px;
+
+            content: "";
+            transform: rotate(-45deg);
+
+            border-radius: 1px;
+            background-color: white;
+        }
+
+        &__collapse
+        {
+            position: absolute;
+            right: 20px;
+            bottom: auto;
+
+            padding: 0;
+
+            border: 0;
+            background-color: transparent;
+        }
+
+        &__collapse:focus
+        {
+            outline: 0;
+        }
+
+        &__collapse span:first-child
+        {
+            margin-top: 18px;
+        }
+
+        &__row
+        {
+            display: block;
+
+            width: 23px;
+            height: 4px;
+            margin-top: 5px;
+
+            background-color: @light-blue;
+        }
+    }
+    @media (@tablet-widths)
+    {
+        &
+        {
+            background-color: #fff;
+        }
+
+        &__list
+        {
+            display: flex;
+            flex-direction: row;
+
+            align-content: flex-end;
+            //justify-content: space-around;
+        }
+
+        & li
+        {
+            font-size: 14px;
+            line-height: 26px;
+
+            flex-basis: 20%;
+        }
+
+        & li:nth-child(3)
+        {
+            margin-left: auto;
+        }
+
+        & a
+        {
+            padding: 15px 0;
+
+            color: #000;
+        }
+
+        & a:hover
+        {
+            color: @light-blue;
+        }
+
+        & a:focus
+        {
+            color: #dadada;
+        }
+
+        & a:active
+        {
+            color: #604e43;
+        }
+
+        &__collapse
+        {
+            display: none;
+        }
+    }
+}

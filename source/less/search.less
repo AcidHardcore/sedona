@@ -1,0 +1,169 @@
+@import "./../variables";
+
+.search
+{
+    text-align: center;
+
+    color: #000;
+    background-color: #766357;
+
+    font-weight: 700;
+    line-height: 26px;
+    &__title
+    {
+        padding-top: 35px;
+        padding-bottom: 20px;
+
+        color: #fff;
+
+        font-size: 18px;
+    }
+    &__title-inner
+    {
+        max-width: 300px;
+        margin: 0 auto;
+
+        text-decoration: none;
+    }
+    & form
+    {
+        text-align: left;
+
+        background-color: #fff;
+    }
+    &__form-inner
+    {
+        position: relative;
+
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    &__label
+    {
+        display: block;
+
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }
+    &__label:first-child
+    {
+        padding-top: 30px;
+    }
+    &__input-data
+    {
+        display: block;
+
+        width: 100%;
+        height: 28px;
+        margin-bottom: 30px;
+        padding-right: 32px;
+        padding-left: 15px;
+
+        border: 0;
+        background-color: #f2f2f2;
+    }
+    &__data-adult-inner
+    {
+        position: relative;
+
+        float: left;
+
+        width: 115px;
+        padding-bottom: 45px;
+    }
+    &__data-children-inner
+    {
+        position: relative;
+
+        float: right;
+
+        width: 115px;
+        padding-bottom: 45px;
+    }
+    &__input-number
+    {
+        display: block;
+
+        width: 100%;
+        height: 28px;
+        padding-left: 52px;
+
+        border: 0;
+        background-color: #f2f2f2;
+    }
+    &__input-data:hover,
+    &__input-number:hover
+    {
+        border: 0;
+        outline: 0;
+        background-color: #ebebeb;
+    }
+    &__input-data:active,
+    &__input-number:active,
+    &__input-data:focus,
+    &__input-number:focus
+    {
+        border: 1px solid #e5e5e5;
+        outline: 0;
+        background-color: #fff;
+    }
+    &__calendar
+    {
+        position: absolute;
+        top: 74px;
+        right: 9px;
+
+        width: 20px;
+        height: 22px;
+
+        fill: #c2c2c2;
+    }
+    /*&__calendar svg
+    {
+
+        height: 22px;
+    }*/
+    &__calendar--out
+    {
+        top: 173px;
+        right: 9px;
+    }
+    &__calendar:hover,
+    &__minus:hover,
+    &__plus:hover
+    {
+        fill: #000;
+    }
+    &__calendar:active,
+    &__calendar:focus,
+    &__minus:active,
+    &__minus:focus,
+    &__plus:active,
+    &__plus:focus
+    {
+        fill: @light-blue;
+    }
+
+    &__minus
+    {
+        position: absolute;
+        top: 84px;
+        left: 15px;
+
+        width: 10px;
+        height: 2px;
+
+        fill: #c2c2c2;
+    }
+    &__plus
+    {
+        position: absolute;
+        top: 80px;
+        right: 15px;
+
+        width: 10px;
+        height: 10px;
+
+        fill: #c2c2c2;
+    }
+}

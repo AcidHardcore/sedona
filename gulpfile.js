@@ -149,5 +149,5 @@ gulp.task('clean', function () {
 
 //default task - auto running on WebStorm start
 gulp.task('default',
-    gulp.series(/*'comb',*/ /*gulp.parallel('css', 'img', 'html'),*/ gulp.parallel('watch', 'serve'))
+    gulp.series('comb', /*gulp.parallel('css', 'img', 'html'),*/ gulp.parallel('watch', 'serve'))
 );
