@@ -34,7 +34,12 @@
                 </button>
             </nav>
             <a class="page-header__logo" href="index.html">
-                <img src="./img/logo-sedona@1x.png"
+                <svg class="page-header__logo-triangle">
+                    <use xlink:href="#form-logo-triangle" data-img="img/form-logo-triangle.png"></use>
+                </svg>
+                <noscript><img class="page-header__logo-triangle" src="img/form-logo-triangle.png" width="138"
+                               height="70" alt="form-logo-triangle"/></noscript>
+                <img class="page-header__logo-img" src="./img/logo-sedona@1x.png"
                      width="67" height="56"
                      srcset="./img/logo-sedona@1x.png 768w,                                                                     ./img/logo-sedona@1x.png 2x,
                              ./img/logo-sedona@2x.png 1200w,
@@ -50,11 +55,6 @@
             <article class="reasons">
                 <div class="reasons__inner">
                     <div class="reasons__intro">
-                        <svg class="reasons__logo-triangle">
-                            <use xlink:href="#form-logo-triangle" data-img="img/form-logo-triangle.png"></use>
-                        </svg>
-                        <noscript><img class="reasons__logo-triangle" src="img/form-logo-triangle.png" width="138"
-                                       height="70" alt="form-logo-triangle"/></noscript>
                         <svg class="reasons__welcome">
                             <use xlink:href="#text-welcome" data-img="img/text-welcome.png"></use>
                         </svg>
