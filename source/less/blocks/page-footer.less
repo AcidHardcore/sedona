@@ -2,12 +2,14 @@
 
 .page-footer
 {
-    &__inner
-    {
-        text-align: center;
-
-        .container;
+    text-align: center;
+    @media (@tablet-widths) {
+        display: flex;
+        flex-direction: row;
+        height: 120px;
+        align-content: center;
     }
+
     &__hash-tag
     {
         display: block;
@@ -20,10 +22,16 @@
         font-size: 21px;
         font-weight: 700;
         line-height: 26px;
+        @media (@tablet-widths) {
+            flex-basis: 33%;
+        }
     }
     &__social
     {
         padding-bottom: 40px;
+        @media (@tablet-widths) {
+            flex-basis: 33%;
+        }
     }
     &__links:hover
     {
@@ -94,6 +102,9 @@
     &__copyright
     {
         padding-bottom: 25px;
+        @media (@tablet-widths) {
+            flex-basis: 33%;
+        }
     }
     &__links svg:focus,
     &__links svg:active
