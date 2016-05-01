@@ -1,21 +1,18 @@
 @import "./../variables.less";
 
-.page-nav
-{
+.page-nav {
     position: relative;
 
     background-color: @light-blue;
-    & ul
-    {
+    & ul {
         margin: 0;
         padding: 0;
 
         list-style: none;
     }
-    & li
-    {
+
+    & li {
         position: relative;
-        z-index: 3;
 
         text-align: center;
 
@@ -25,31 +22,28 @@
         font-size: 18px;
         line-height: 40px;
     }
-    //& li:first-child {
-    //  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2);
-    //}
-    & li:last-child
-    {
+
+    & li:last-child {
         box-shadow: 0 1px 0 0 rgba(1, 1, 1, .2),
         inset 0 1px 0 0 rgba(255, 255, 255, .2),
         inset 0 -2px 0 0 rgba(0, 0, 0, .2);
     }
-    & li:hover
-    {
+
+    & li:hover {
         background-color: #669ec0;
     }
+
     & li:focus,
-    & li:active
-    {
+    & li:active {
         background-color: #5496bd;
     }
+
     & a:active,
-    & a:focus
-    {
+    & a:focus {
         color: #94b9d2;
     }
-    & a
-    {
+
+    & a {
         display: block;
 
         padding: 8px 0;
@@ -60,23 +54,23 @@
 
         font-weight: 700;
     }
-    &::before
-    {
+
+    &::before {
         position: absolute;
         top: 25px;
         right: 20px;
 
         width: 23px;
         height: 4px;
-
+        z-index: 2;
         content: "";
         transform: rotate(45deg);
 
         border-radius: 1px;
         background-color: white;
     }
-    &::after
-    {
+
+    &::after {
         position: absolute;
         top: 25px;
         right: 20px;
@@ -90,8 +84,8 @@
         border-radius: 1px;
         background-color: white;
     }
-    &__collapse
-    {
+
+    &__collapse {
         position: absolute;
         right: 20px;
         bottom: auto;
@@ -101,16 +95,16 @@
         border: 0;
         background-color: transparent;
     }
-    &__collapse:focus
-    {
+
+    &__collapse:focus {
         outline: 0;
     }
-    &__collapse span:first-child
-    {
+
+    &__collapse span:first-child {
         margin-top: 18px;
     }
-    &__row
-    {
+
+    &__row {
         display: block;
 
         width: 23px;
@@ -120,3 +114,5 @@
         background-color: @light-blue;
     }
 }
+
+
