@@ -1,9 +1,11 @@
 @import "./../variables.less";
 
-.reasons {
+.reasons
+{
     text-align: center;
 
-    &__intro {
+    &__intro
+    {
         position: relative;
 
         height: 390px;
@@ -12,7 +14,8 @@
         background: url("./../img/photo-background@1x.jpg") no-repeat;
         background-size: cover;
 
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
+        {
             background-image: url("./../img/photo-background@2x.jpg");
         }
     }
@@ -37,7 +40,8 @@
         background-repeat: no-repeat;
         background-size: cover;
     }*/
-    &__welcome {
+    &__welcome
+    {
         position: absolute;
         top: 47px;
         right: 0;
@@ -50,7 +54,8 @@
 
         fill: @light-blue;
     }
-    &__tothegorgeous {
+    &__tothegorgeous
+    {
         position: absolute;
         top: 91px;
         right: 0;
@@ -63,7 +68,8 @@
 
         fill: #766357;
     }
-    &__sedona {
+    &__sedona
+    {
         position: absolute;
         top: 173px;
         right: 0;
@@ -76,7 +82,8 @@
 
         fill: #fff;
     }
-    &__becausecanyon {
+    &__becausecanyon
+    {
         position: absolute;
         top: 287px;
         right: 0;
@@ -88,7 +95,8 @@
 
         fill: #fff;
     }
-    &__title {
+    &__title
+    {
         width: 295px;
         margin: 0 auto;
         padding-top: 40px;
@@ -100,58 +108,70 @@
         font-weight: 700;
         line-height: 26px;
     }
-    &__desc {
+    &__desc
+    {
         width: 295px;
         margin: 0 auto;
         padding-bottom: 50px;
 
         line-height: 26px;
     }
-    @media (@tablet-widths) {
-        &__intro {
+    @media (@tablet-widths)
+    {
+        &__intro
+        {
             height: 515px;
         }
 
-        &__flex-wrapper {
+        &__flex-wrapper
+        {
             display: flex;
             flex-direction: row;
+
+            align-items: center;
         }
-        &__welcome {
+        &__welcome
+        {
             top: 77px;
 
             width: 189px;
             height: 45px;
         }
 
-        &__tothegorgeous {
+        &__tothegorgeous
+        {
             top: 133px;
 
             width: 256px;
             height: 30px;
         }
 
-        &__sedona {
+        &__sedona
+        {
             top: 215px;
 
             width: 457px;
             height: 75px;
         }
 
-        &__becausecanyon {
+        &__becausecanyon
+        {
             top: 348px;
 
             width: 296px;
             height: 80px;
         }
 
-        &__title {
+        &__title
+        {
             width: 500px;
             padding-top: 55px;
 
             font-size: 21px;
         }
 
-        &__desc {
+        &__desc
+        {
             width: 500px;
             padding-bottom: 55px;
         }

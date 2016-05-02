@@ -3,4 +3,17 @@
 .map
 {
     text-align: center;
+    & iframe
+    {
+        @media (@tablet-widths)
+        {
+            width: 768px;
+            height: 477px;
+        }
+        @media (@desktop-widths)
+        {
+            width: 1200px;
+            height: 477px;
+        }
+    }
 }

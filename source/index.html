@@ -137,7 +137,7 @@
                 </section>
                 <section class="reason">
                     <div class="reason__inner reason__inner--color reason__inner--order2 reason__inner--flex-basis">
-                        <h2 class="reason__title reason__title--color">там есть мост дьявола</h2>
+                        <h2 class="reason__title reason__title--color reason__title--padding">там есть мост дьявола</h2>
                         <div class="reason__number-inner reason__number-inner--color">
                             <div class="reason__number reason__number--color">№2</div>
                         </div>
@@ -146,33 +146,33 @@
                     <div class="reason__image reason__image--bridge reason__inner--order1"></div>
                 </section>
                 <div class="reasons__flex-wrapper">
-                <section class="reason reason--bg reason--delimiter">
-                    <div class="reason__inner">
-                        <h2 class="reason__title">небольшая площадь</h2>
-                        <div class="reason__number-inner">
-                            <div class="reason__number">№3</div>
+                    <section class="reason reason--bg reason--delimiter">
+                        <div class="reason__inner">
+                            <h2 class="reason__title">небольшая площадь</h2>
+                            <div class="reason__number-inner">
+                                <div class="reason__number">№3</div>
+                            </div>
+                            <p class="reason__desc">ВСЕ достопримечательности находятся очень близко</p>
                         </div>
-                        <p class="reason__desc">ВСЕ достопримечательности находятся очень близко</p>
-                    </div>
-                </section>
-                <section class="reason reason--bg reason--delimiter">
-                    <div class="reason__inner">
-                        <h2 class="reason__title">красивая дорога</h2>
-                        <div class="reason__number-inner">
-                            <div class="reason__number">№4</div>
+                    </section>
+                    <section class="reason reason--bg reason--delimiter">
+                        <div class="reason__inner">
+                            <h2 class="reason__title">красивая дорога</h2>
+                            <div class="reason__number-inner">
+                                <div class="reason__number">№4</div>
+                            </div>
+                            <p class="reason__desc">ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА совсем НЕ СКУЧНО!</p>
                         </div>
-                        <p class="reason__desc">ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА совсем НЕ СКУЧНО!</p>
-                    </div>
-                </section>
-                <section class="reason reason--bg">
-                    <div class="reason__inner">
-                        <h2 class="reason__title">мало туристов</h2>
-                        <div class="reason__number-inner">
-                            <div class="reason__number">№5</div>
+                    </section>
+                    <section class="reason reason--bg">
+                        <div class="reason__inner">
+                            <h2 class="reason__title">мало туристов</h2>
+                            <div class="reason__number-inner">
+                                <div class="reason__number">№5</div>
+                            </div>
+                            <p class="reason__desc">большинство едет в гранд каньон и толпится там</p>
                         </div>
-                        <p class="reason__desc">большинство едет в гранд каньон и толпится там</p>
-                    </div>
-                </section>
+                    </section>
                 </div>
             </article>
             <section class="interested">
@@ -180,75 +180,78 @@
                     <h2 class="interested__title">Заинтересовались?</h2>
                     <p>Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне</p>
                 </div>
-            </section>
-            <section class="search">
-                <a class="search__title-inner" href="#">
-                    <h2 class="search__title">поиск гостинницы в седоне</h2>
-                </a>
-                <form action="#" method="post">
-                    <div class="search__form-inner">
-                        <label class="search__label" for="data-in">дата заезда:</label>
-                        <input class="search__input-data" id="data-in" type="date" name="arrival" value="">
-                        <a href="#">
-                            <svg class="search__calendar">
-                                <use xlink:href="#icon-calendar" data-img="img/icon-calendar.png"></use>
-                            </svg>
-                            <noscript><img class="search__calendar" src="img/icon-calendar.png" width="20"
-                                           height="22" alt="icon-calendar">
-                            </noscript>
-                        </a>
-                        <label class="search__label" for="data-out">дата выезда:</label>
-                        <input class="search__input-data" id="data-out" type="date" name="departure" value="">
-                        <a href="#">
-                            <svg class="search__calendar search__calendar--out">
-                                <use xlink:href="#icon-calendar" data-img="img/icon-calendar.png"></use>
-                            </svg>
-                            <noscript><img class="search__calendar search__calendar--out" src="img/icon-calendar.png"
-                                           width="20" height="22" alt="icon-burger">
-                            </noscript>
-                        </a>
-                        <div class="search__data-adult-inner">
-                            <label class="search__label" for="data-adult">взрослые:</label>
-                            <input class="search__input-number" id="data-adult" type="number" min="1" name="adult"
-                                   value="2">
+
+                <section class="search">
+                    <a class="search__title-inner" href="#">
+                        <h2 class="search__title">поиск гостинницы в седоне</h2>
+                    </a>
+                    <form action="#" method="post">
+                        <div class="search__form-inner ">
+                            <label class="search__label" for="data-in">дата заезда:</label>
+                            <input class="search__input-data" id="data-in" type="date" name="arrival" value="">
                             <a href="#">
-                                <svg class="search__minus">
-                                    <use xlink:href="#icon-minus" data-img="img/icon-minus.png"></use>
+                                <svg class="search__calendar">
+                                    <use xlink:href="#icon-calendar" data-img="img/icon-calendar.png"></use>
                                 </svg>
-                                <noscript><img class="search__minus" src="img/icon-minus.png" width="10" height="3"
-                                               alt="icon-minus">
+                                <noscript><img class="search__calendar" src="img/icon-calendar.png" width="20"
+                                               height="22" alt="icon-calendar">
                                 </noscript>
                             </a>
+                            <label class="search__label" for="data-out">дата выезда:</label>
+                            <input class="search__input-data" id="data-out" type="date" name="departure" value="">
                             <a href="#">
-                                <svg class="search__plus">
-                                    <use xlink:href="#icon-plus" data-img="img/icon-plus.png"></use>
+                                <svg class="search__calendar search__calendar--out">
+                                    <use xlink:href="#icon-calendar" data-img="img/icon-calendar.png"></use>
                                 </svg>
-                                <noscript><img class="search__plus" src="img/icon-plus.png" width="10" height="10"
-                                               alt="icon-plus"></noscript>
+                                <noscript><img class="search__calendar search__calendar--out"
+                                               src="img/icon-calendar.png"
+                                               width="20" height="22" alt="icon-burger">
+                                </noscript>
                             </a>
+                            <div class="search__data-adult-inner">
+                                <label class="search__label" for="data-adult">взрослые:</label>
+                                <input class="search__input-number" id="data-adult" type="number" min="1" name="adult"
+                                       value="2">
+                                <a href="#">
+                                    <svg class="search__minus">
+                                        <use xlink:href="#icon-minus" data-img="img/icon-minus.png"></use>
+                                    </svg>
+                                    <noscript><img class="search__minus" src="img/icon-minus.png" width="10" height="3"
+                                                   alt="icon-minus">
+                                    </noscript>
+                                </a>
+                                <a href="#">
+                                    <svg class="search__plus">
+                                        <use xlink:href="#icon-plus" data-img="img/icon-plus.png"></use>
+                                    </svg>
+                                    <noscript><img class="search__plus" src="img/icon-plus.png" width="10" height="10"
+                                                   alt="icon-plus"></noscript>
+                                </a>
+                            </div>
+                            <div class="search__data-children-inner">
+                                <label class="search__label" for="data-children">дети:</label>
+                                <input class="search__input-number" id="data-children" type="number" min="0"
+                                       name="children"
+                                       value="0">
+                                <a href="#">
+                                    <svg class="search__minus">
+                                        <use xlink:href="#icon-minus" data-img="img/icon-minus.png"></use>
+                                    </svg>
+                                    <noscript><img class="search__minus" src="img/icon-minus.png" width="10" height="3"
+                                                   alt="icon-minus"></noscript>
+                                </a>
+                                <a href="#">
+                                    <svg class="search__plus">
+                                        <use xlink:href="#icon-plus" data-img="img/icon-plus.png"></use>
+                                    </svg>
+                                    <noscript><img class="search__plus" src="img/icon-plus.png" width="10" height="10"
+                                                   alt="icon-plus"></noscript>
+                                </a>
+                            </div>
+                            <button class="btn btn--search" type="submit" name="search">Найти</button>
                         </div>
-                        <div class="search__data-children-inner">
-                            <label class="search__label" for="data-children">дети:</label>
-                            <input class="search__input-number" id="data-children" type="number" min="0" name="children"
-                                   value="0">
-                            <a href="#">
-                                <svg class="search__minus">
-                                    <use xlink:href="#icon-minus" data-img="img/icon-minus.png"></use>
-                                </svg>
-                                <noscript><img class="search__minus" src="img/icon-minus.png" width="10" height="3"
-                                               alt="icon-minus"></noscript>
-                            </a>
-                            <a href="#">
-                                <svg class="search__plus">
-                                    <use xlink:href="#icon-plus" data-img="img/icon-plus.png"></use>
-                                </svg>
-                                <noscript><img class="search__plus" src="img/icon-plus.png" width="10" height="10"
-                                               alt="icon-plus"></noscript>
-                            </a>
-                        </div>
-                        <button class="btn btn--search" type="submit" name="search">Найти</button>
-                    </div>
-                </form>
+                    </form>
+                </section>
             </section>
             <div class="map">
                 <noscript><img src="./img/map@1x.jpg" width="320" height="594" srcset="./img/map@1x.jpg 768w,
@@ -263,50 +266,50 @@
 
 
     <footer class="page-footer">
-            <div class="page-footer__hash-tag">
-                <b>#visitsedona</b>
-            </div>
-            <div class="page-footer__social">
-                <a class="page-footer__links" href="#">
-                    <svg class="page-footer__links-tw">
-                        <use xlink:href="#icon-twitter" data-img="img/icon-twitter.png"></use>
-                    </svg>
-                    <noscript><img class="page-footer__links-tw" src="img/icon-twitter.png" width="18" height="14"
-                                   alt="icon-twitter"></noscript>
-                </a>
-                <a class="page-footer__links" href="#">
-                    <svg class="page-footer__links-fb">
-                        <use xlink:href="#icon-facebook" data-img="img/icon-facebook"></use>
-                    </svg>
-                    <noscript><img class="page-footer__links-fb" src="img/icon-facebook.png" width="8" height="18"
-                                   alt="icon-facebook"></noscript>
-                </a>
-                <a class="page-footer__links" href="#">
-                    <svg class="page-footer__links-yt">
-                        <use xlink:href="#icon-youtube" data-img="img/icon-youtube"></use>
-                    </svg>
-                    <noscript><img class="page-footer__links-yt" src="img/icon-youtube.png" width="20" height="14"
-                                   alt="icon-youtube"></noscript>
-                </a>
-            </div>
-            <div class="page-footer__copyright">
-                <span>website by</span>
-                <a class="btn btn--copyright" href="#">
-                    <svg class="btn__logo">
-                        <use xlink:href="#logo-glukhanko" data-img="img/logo-glukhanko"></use>
-                    </svg>
-                    <noscript><img class="btn__logo" src="img/logo-glukhanko.png" width="27" height="30" alt="">
-                    </noscript>
-                </a>
-                <span>for</span>
-                <a class="btn btn--copyright" href="#">
-                    <svg class="btn__logo">
-                        <use xlink:href="#logo-htmlacademy" data-img="img/logo-htmlacademy"></use>
-                    </svg>
-                    <noscript><img class="btn__logo" src="img/logo-htmlacademy.png" width="27" height="33" alt="">
-                    </noscript>
-                </a>
-            </div>
+        <div class="page-footer__hash-tag">
+            <b>#visitsedona</b>
+        </div>
+        <div class="page-footer__social">
+            <a class="page-footer__links" href="#">
+                <svg class="page-footer__links-tw">
+                    <use xlink:href="#icon-twitter" data-img="img/icon-twitter.png"></use>
+                </svg>
+                <noscript><img class="page-footer__links-tw" src="img/icon-twitter.png" width="18" height="14"
+                               alt="icon-twitter"></noscript>
+            </a>
+            <a class="page-footer__links" href="#">
+                <svg class="page-footer__links-fb">
+                    <use xlink:href="#icon-facebook" data-img="img/icon-facebook"></use>
+                </svg>
+                <noscript><img class="page-footer__links-fb" src="img/icon-facebook.png" width="8" height="18"
+                               alt="icon-facebook"></noscript>
+            </a>
+            <a class="page-footer__links" href="#">
+                <svg class="page-footer__links-yt">
+                    <use xlink:href="#icon-youtube" data-img="img/icon-youtube"></use>
+                </svg>
+                <noscript><img class="page-footer__links-yt" src="img/icon-youtube.png" width="20" height="14"
+                               alt="icon-youtube"></noscript>
+            </a>
+        </div>
+        <div class="page-footer__copyright">
+            <span>website by</span>
+            <a class="btn btn--copyright" href="#">
+                <svg class="btn__logo">
+                    <use xlink:href="#logo-glukhanko" data-img="img/logo-glukhanko"></use>
+                </svg>
+                <noscript><img class="btn__logo" src="img/logo-glukhanko.png" width="27" height="30" alt="">
+                </noscript>
+            </a>
+            <span>for</span>
+            <a class="btn btn--copyright" href="#">
+                <svg class="btn__logo">
+                    <use xlink:href="#logo-htmlacademy" data-img="img/logo-htmlacademy"></use>
+                </svg>
+                <noscript><img class="btn__logo" src="img/logo-htmlacademy.png" width="27" height="33" alt="">
+                </noscript>
+            </a>
+        </div>
     </footer>
 </div>
 <script>

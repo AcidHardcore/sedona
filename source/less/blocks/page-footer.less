@@ -3,11 +3,15 @@
 .page-footer
 {
     text-align: center;
-    @media (@tablet-widths) {
+    @media (@tablet-widths)
+    {
         display: flex;
         flex-direction: row;
+
         height: 120px;
-        align-content: center;
+
+        -js-display: flex;
+        align-items: center;
     }
 
     &__hash-tag
@@ -22,14 +26,20 @@
         font-size: 21px;
         font-weight: 700;
         line-height: 26px;
-        @media (@tablet-widths) {
+        @media (@tablet-widths)
+        {
+            padding: 0;
+
             flex-basis: 33%;
         }
     }
     &__social
     {
         padding-bottom: 40px;
-        @media (@tablet-widths) {
+        @media (@tablet-widths)
+        {
+            padding: 0;
+
             flex-basis: 33%;
         }
     }
@@ -102,7 +112,10 @@
     &__copyright
     {
         padding-bottom: 25px;
-        @media (@tablet-widths) {
+        @media (@tablet-widths)
+        {
+            padding: 0;
+
             flex-basis: 33%;
         }
     }

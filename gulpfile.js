@@ -34,7 +34,7 @@ gulp.task('comb', function () {
     return gulp.src('./source/less/blocks/*.less', {since: gulp.lastRun('comb')}) // only  files were change
         .pipe(csscomb())
         .pipe(debug({title: "cssComb:"}))
-        .pipe(gulp.dest('./source/less/'))
+        .pipe(gulp.dest('./source/less/blocks/'))
         .pipe(debug({title: "less combed:"}));
 });
 //  LESS compilation
