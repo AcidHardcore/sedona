@@ -23,7 +23,8 @@ var gulp = require('gulp'),
     svgstore = require('gulp-svgstore'),
     svgmin = require('gulp-svgmin'),
     cheerio = require('gulp-cheerio'),
-    svgfallback = require('gulp-svgfallback');
+    svgfallback = require('gulp-svgfallback'),
+    uglify = require('gulp-uglify');
 
 // Запуск `NODE_ENV=production npm start [задача]` приведет к сборке без sourcemaps
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'dev';
@@ -54,8 +55,8 @@ gulp.task('css', function () {
         .pipe(debug({title: "group media queries:"}))
         .pipe(autoprefixer({browsers: ['last 2 version']}))
         .pipe(debug({title: "autoPrefixer:"}))
-         .pipe(csscomb())
-         .pipe(debug({title: "cssComb:"}))
+        .pipe(gulpIf (!isDev, csscomb()))
+        .pipe(gulpIf (!isDev, debug({title: "cssComb:"})))
         .pipe(gulpIf(!isDev, cleancss()))
         .pipe(gulpIf(!isDev, debug({title: "cleenCss:"})))
         .pipe(rename({suffix: '.min'}))
@@ -100,6 +101,27 @@ gulp.task('svgstore', function () {
         .pipe(debug({title: "SVG-sprite:"}));
 });
 
+// concatenate and uglify JS
+gulp.task('js', function () {
+        console.log('---------- JS processing');
+    return gulp.src('./source/js/*.js')
+        .pipe(debug({title: "JS:"}))
+            .pipe(gulpIf(isDev, sourcemaps.init()))
+            .pipe(concat('script.min.js'))
+            .pipe(gulpIf(!isDev, uglify()))
+            .on('error', notify.onError(function(err){
+                return {
+                    title: 'Javascript uglify error',
+                    message: err.message
+                }
+            }))
+            .pipe(gulpIf(isDev, sourcemaps.write('.')))
+            .pipe(gulpIf(isDev, debug({title: "JS SOURCEMAPS:"})))
+            .pipe(gulp.dest('./build/js/'))
+            .pipe(debug({title: "JS:"}));
+
+});
+
 // Compile SVG fall back sprite
 gulp.task('svgfallback', function () {
     console.log('---------- Compile SVG fall back sprite');
@@ -122,6 +144,7 @@ gulp.task('html', function () {
 gulp.task('watch', function () {
     gulp.watch('./source/less/**/*.less', gulp.series('css'));
     gulp.watch('./source/*.html', gulp.series('html'));
+    gulp.watch('./source/js/*.js', gulp.series('js'));
     gulp.watch('./source/img/*.{jpg,jpeg,gif,png,svg}', gulp.series('img'));
 });
 
@@ -134,6 +157,7 @@ gulp.task('serve', function () {
         }
     });
     browserSync.watch('./build/css/*.css').on('change', browserSync.reload);
+    browserSync.watch('./build/js/*.js').on('change', browserSync.reload);
     browserSync.watch('./build/img/*.*').on('change', browserSync.reload);
     browserSync.watch('./build/*.html').on('change', browserSync.reload);
 });
@@ -149,5 +173,5 @@ gulp.task('clean', function () {
 
 //default task - auto running on WebStorm start
 gulp.task('default',
-    gulp.series('comb', /*gulp.parallel('css', 'img', 'html'),*/ gulp.parallel('watch', 'serve'))
+    gulp.series('comb', /*gulp.parallel('css', 'img', 'html', 'js'),*/ gulp.parallel('watch', 'serve'))
 );

@@ -1,17 +1,25 @@
 @import "./../variables";
 
-.map
-{
+.map {
+    background: #81b3d2 url("../img/photo-map@1x.jpg") center;
+    height: 360px;
+    @media (@tablet-widths) {
+        background: #81b3d2 url("../img/photo-map@2x.jpg") center;
+        height: 477px;
+    }
+    @media (@tablet-widths) {
+        background: #81b3d2 url("../img/photo-map@3x.jpg") center;
+
+    }
     text-align: center;
-    & iframe
-    {
-        @media (@tablet-widths)
-        {
+    & iframe {
+        width: 320px;
+        height: 360px;
+        @media (@tablet-widths) {
             width: 768px;
             height: 477px;
         }
-        @media (@desktop-widths)
-        {
+        @media (@desktop-widths) {
             width: 1200px;
             height: 477px;
         }
