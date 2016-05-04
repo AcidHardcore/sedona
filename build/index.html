@@ -5,14 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet'
           type='text/css'>
-    <!--<script>
-        // A part of the fallback for browsers that do not support SVG
-        if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) {
-            document.createElement('svg');
-            document.createElement('use');
-        }
-    </script>-->
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Sedona</title>
 </head>
 <body>
@@ -21,7 +15,9 @@
     <header class="page-header">
         <nav class="page-nav">
             <ul class="page-nav__list">
-                <li><a href="#">Карта штата</a></li>
+                <li><a href="#">Карта штата</a>
+                    <button class="page-nav__close" type="button">Закрыть</button>
+                </li>
                 <li><a href="#">Информация</a></li>
                 <li><a href="#">Фото и Видео</a></li>
                 <li><a href="#">Гостинницы</a></li>
@@ -180,78 +176,73 @@
                     <h2 class="interested__title">Заинтересовались?</h2>
                     <p>Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне</p>
                 </div>
-
-                <section class="search">
-                    <a class="search__title-inner" href="#">
-                        <h2 class="search__title">поиск гостинницы в седоне</h2>
-                    </a>
-                    <form action="#" method="post">
-                        <div class="search__form-inner ">
-                            <label class="search__label" for="data-in">дата заезда:</label>
-                            <input class="search__input-data" id="data-in" type="date" name="arrival" value="">
+                <button class="btn--search-collapse" type="button">поиск гостинницы в седоне</button>
+                <form class="search" action="#" method="post">
+                    <div class="search__inner">
+                        <label class="search__label search__label--indent" for="data-in">дата заезда:</label>
+                        <input class="search__input-data" id="data-in" type="date" name="arrival" value="">
+                        <a href="#">
+                            <svg class="search__calendar">
+                                <use xlink:href="#icon-calendar" data-img="img/icon-calendar.png"></use>
+                            </svg>
+                            <noscript><img class="search__calendar" src="img/icon-calendar.png" width="20"
+                                           height="22" alt="icon-calendar">
+                            </noscript>
+                        </a>
+                        <label class="search__label" for="data-out">дата выезда:</label>
+                        <input class="search__input-data" id="data-out" type="date" name="departure" value="">
+                        <a href="#">
+                            <svg class="search__calendar search__calendar--out">
+                                <use xlink:href="#icon-calendar" data-img="img/icon-calendar.png"></use>
+                            </svg>
+                            <noscript><img class="search__calendar search__calendar--out"
+                                           src="img/icon-calendar.png"
+                                           width="20" height="22" alt="icon-burger">
+                            </noscript>
+                        </a>
+                        <div class="search__data-adult-inner">
+                            <label class="search__label" for="data-adult">взрослые:</label>
+                            <input class="search__input-number" id="data-adult" type="number" min="1" name="adult"
+                                   value="2">
                             <a href="#">
-                                <svg class="search__calendar">
-                                    <use xlink:href="#icon-calendar" data-img="img/icon-calendar.png"></use>
+                                <svg class="search__minus">
+                                    <use xlink:href="#icon-minus" data-img="img/icon-minus.png"></use>
                                 </svg>
-                                <noscript><img class="search__calendar" src="img/icon-calendar.png" width="20"
-                                               height="22" alt="icon-calendar">
+                                <noscript><img class="search__minus" src="img/icon-minus.png" width="10" height="3"
+                                               alt="icon-minus">
                                 </noscript>
                             </a>
-                            <label class="search__label" for="data-out">дата выезда:</label>
-                            <input class="search__input-data" id="data-out" type="date" name="departure" value="">
                             <a href="#">
-                                <svg class="search__calendar search__calendar--out">
-                                    <use xlink:href="#icon-calendar" data-img="img/icon-calendar.png"></use>
+                                <svg class="search__plus">
+                                    <use xlink:href="#icon-plus" data-img="img/icon-plus.png"></use>
                                 </svg>
-                                <noscript><img class="search__calendar search__calendar--out"
-                                               src="img/icon-calendar.png"
-                                               width="20" height="22" alt="icon-burger">
-                                </noscript>
+                                <noscript><img class="search__plus" src="img/icon-plus.png" width="10" height="10"
+                                               alt="icon-plus"></noscript>
                             </a>
-                            <div class="search__data-adult-inner">
-                                <label class="search__label" for="data-adult">взрослые:</label>
-                                <input class="search__input-number" id="data-adult" type="number" min="1" name="adult"
-                                       value="2">
-                                <a href="#">
-                                    <svg class="search__minus">
-                                        <use xlink:href="#icon-minus" data-img="img/icon-minus.png"></use>
-                                    </svg>
-                                    <noscript><img class="search__minus" src="img/icon-minus.png" width="10" height="3"
-                                                   alt="icon-minus">
-                                    </noscript>
-                                </a>
-                                <a href="#">
-                                    <svg class="search__plus">
-                                        <use xlink:href="#icon-plus" data-img="img/icon-plus.png"></use>
-                                    </svg>
-                                    <noscript><img class="search__plus" src="img/icon-plus.png" width="10" height="10"
-                                                   alt="icon-plus"></noscript>
-                                </a>
-                            </div>
-                            <div class="search__data-children-inner">
-                                <label class="search__label" for="data-children">дети:</label>
-                                <input class="search__input-number" id="data-children" type="number" min="0"
-                                       name="children"
-                                       value="0">
-                                <a href="#">
-                                    <svg class="search__minus">
-                                        <use xlink:href="#icon-minus" data-img="img/icon-minus.png"></use>
-                                    </svg>
-                                    <noscript><img class="search__minus" src="img/icon-minus.png" width="10" height="3"
-                                                   alt="icon-minus"></noscript>
-                                </a>
-                                <a href="#">
-                                    <svg class="search__plus">
-                                        <use xlink:href="#icon-plus" data-img="img/icon-plus.png"></use>
-                                    </svg>
-                                    <noscript><img class="search__plus" src="img/icon-plus.png" width="10" height="10"
-                                                   alt="icon-plus"></noscript>
-                                </a>
-                            </div>
-                            <button class="btn btn--search" type="submit" name="search">Найти</button>
                         </div>
-                    </form>
-                </section>
+                        <div class="search__data-children-inner">
+                            <label class="search__label" for="data-children">дети:</label>
+                            <input class="search__input-number" id="data-children" type="number" min="0"
+                                   name="children"
+                                   value="0">
+                            <a href="#">
+                                <svg class="search__minus">
+                                    <use xlink:href="#icon-minus" data-img="img/icon-minus.png"></use>
+                                </svg>
+                                <noscript><img class="search__minus" src="img/icon-minus.png" width="10" height="3"
+                                               alt="icon-minus"></noscript>
+                            </a>
+                            <a href="#">
+                                <svg class="search__plus">
+                                    <use xlink:href="#icon-plus" data-img="img/icon-plus.png"></use>
+                                </svg>
+                                <noscript><img class="search__plus" src="img/icon-plus.png" width="10" height="10"
+                                               alt="icon-plus"></noscript>
+                            </a>
+                        </div>
+                        <button class="btn btn--search" type="submit" name="search">Найти</button>
+                    </div>
+                </form>
             </section>
             <div class="map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52385.135657499966!2d-111.83015808321063!3d34.854443815663906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sua!4v1461661922028"

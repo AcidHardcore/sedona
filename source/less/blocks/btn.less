@@ -3,12 +3,45 @@
 .btn
 {
     text-decoration: none;
+    text-transform: uppercase;
 
     border: 0;
 
+    font-family: "PT Sans", "Arial", sans-serif;
     font-size: 21px;
     line-height: 26px;
 
+    &--search-collapse
+    {
+        width: 100%;
+        padding: 0;
+        padding-top: 27px;
+        padding-bottom: 27px;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        color: #fff;
+        border: 0;
+        outline: 0;
+        background-color: #766357;
+
+        font-family: "PT Sans", "Arial", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 26px;
+        @media (@tablet-widths)
+        {
+            position: absolute;
+            top: 210px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            width: 570px;
+            margin: auto;
+        }
+    }
     &--search
     {
         width: 100%;

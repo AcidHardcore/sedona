@@ -2,63 +2,43 @@
 
 .search
 {
-    text-align: center;
+    width: 320px;
 
-    color: #000;
-    background-color: #766357;
+    text-align: left;
 
-    font-weight: 700;
-    line-height: 26px;
+    background: #fff;
     @media (@tablet-widths)
     {
         position: absolute;
-        top: 610px;
+        top: 290px;
         right: 0;
         bottom: 0;
         left: 0;
 
         width: 570px;
-        height: 480px;
-        margin: auto;
-    }
-    &__title
-    {
-        padding-top: 27px;
-        padding-bottom: 27px;
-
-        color: #fff;
-
-        font-size: 18px;
-        @media (@tablet-widths)
-        {
-            margin: 0;
-        }
-    }
-    &__title-inner
-    {
-        max-width: 300px;
+        height: 396px;
         margin: 0 auto;
-
-        text-decoration: none;
     }
-    & form
-    {
-        text-align: left;
-
-        background-color: #fff;
-    }
-    &__form-inner
+    &__inner
     {
         position: relative;
 
         max-width: 280px;
         margin: 0 auto;
 
+        background: #fff;
+
+        font-size: 0;
+
         @media (@tablet-widths)
         {
-            max-width: 462px;
-            height: 400px;
+            max-width: 458px;
+            //height: 400px;
         }
+    }
+    &--hide-js
+    {
+        display: none;
     }
     &__label
     {
@@ -66,6 +46,9 @@
 
         margin-bottom: 15px;
         margin-left: 20px;
+
+        font-size: 14px;
+        font-weight: 700;
         @media (@tablet-widths)
         {
             display: inline-block;
@@ -75,9 +58,14 @@
             margin-left: 0;
         }
     }
-    &__label:first-child
+    &__label--indent
     {
         padding-top: 30px;
+        @media (@tablet-widths)
+        {
+            margin-right: 23px;
+            padding-top: 56px;
+        }
     }
     &__input-data
     {
@@ -91,6 +79,9 @@
 
         border: 0;
         background-color: #f2f2f2;
+
+        font-size: 14px;
+        font-weight: 700;
         @media (@tablet-widths)
         {
             display: inline-block;
@@ -107,9 +98,12 @@
 
         width: 115px;
         padding-bottom: 45px;
+
+        font-size: 14px;
+        font-weight: 700;
         @media (@tablet-widths)
         {
-            width: 231px;
+            width: 229px;
             padding-bottom: 55px;
         }
     }
@@ -117,7 +111,7 @@
     {
         @media (@tablet-widths)
         {
-            margin-right: 40px;
+            margin-right: 37px;
         }
     }
     &__data-children-inner
@@ -128,9 +122,12 @@
 
         width: 115px;
         padding-bottom: 45px;
+
+        font-size: 14px;
+        font-weight: 700;
         @media (@tablet-widths)
         {
-            width: 231px;
+            width: 229px;
             padding-bottom: 55px;
         }
     }
@@ -138,7 +135,7 @@
     {
         @media (@tablet-widths)
         {
-            margin-left: 53px;
+            margin-left: 52px;
         }
     }
     &__input-number
@@ -156,6 +153,7 @@
             display: inline-block;
 
             width: 115px;
+            height: 40px;
         }
     }
     &__input-data:hover,
@@ -177,7 +175,7 @@
     &__calendar
     {
         position: absolute;
-        top: 74px;
+        top: 69px;
         right: 9px;
 
         width: 20px;
@@ -186,16 +184,16 @@
         fill: #c2c2c2;
         @media (@tablet-widths)
         {
-            top: 32px;
+            top: 55px;
         }
     }
     &__calendar--out
     {
-        top: 173px;
+        top: 163px;
         right: 9px;
         @media (@tablet-widths)
         {
-            top: 101px;
+            top: 125px;
         }
     }
     &__calendar:hover,
@@ -217,7 +215,7 @@
     &__minus
     {
         position: absolute;
-        top: 84px;
+        top: 49px;
         left: 15px;
 
         width: 10px;
@@ -226,14 +224,14 @@
         fill: #c2c2c2;
         @media (@tablet-widths)
         {
-            top: 43px;
-            left: 135px;
+            top: 20px;
+            left: 128px;
         }
     }
     &__plus
     {
         position: absolute;
-        top: 80px;
+        top: 45px;
         right: 15px;
 
         width: 10px;
@@ -242,7 +240,7 @@
         fill: #c2c2c2;
         @media (@tablet-widths)
         {
-            top: 39px;
+            top: 16px;
         }
     }
 }

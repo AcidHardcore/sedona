@@ -27,6 +27,10 @@
 
         font-weight: 700;
     }
+    &__list--close-js
+    {
+        display: none;
+    }
     @media (@mobile-widths-only)
     {
         & li
@@ -68,13 +72,29 @@
         {
             color: #94b9d2;
         }
+        &__close
+        {
+            position: absolute;
+            top: 16px;
+            right: 20px;
 
-        &::before
+            width: 23px;
+            height: 23px;
+
+            cursor: pointer;
+
+            border: 0;
+            outline: 0;
+            background: 0 0;
+
+            font-size: 0;
+        }
+        &__close::before
         {
             position: absolute;
             z-index: 2;
-            top: 25px;
-            right: 20px;
+            top: 9px;
+            right: 0;
 
             width: 23px;
             height: 4px;
@@ -86,11 +106,11 @@
             background-color: white;
         }
 
-        &::after
+        &__close::after
         {
             position: absolute;
-            top: 25px;
-            right: 20px;
+            top: 9px;
+            right: 0;
 
             width: 23px;
             height: 4px;

@@ -1,26 +1,34 @@
 @import "./../variables";
 
-.map {
-    background: #81b3d2 url("../img/photo-map@1x.jpg") center;
+.map
+{
+    width: 100%;
     height: 360px;
-    @media (@tablet-widths) {
-        background: #81b3d2 url("../img/photo-map@2x.jpg") center;
-        height: 477px;
-    }
-    @media (@tablet-widths) {
-        background: #81b3d2 url("../img/photo-map@3x.jpg") center;
+    margin: 0 auto;
 
-    }
     text-align: center;
-    & iframe {
-        width: 320px;
+
+    background: #81b3d2 url("../img/photo-map@1x.jpg") no-repeat center;
+    @media (@tablet-widths)
+    {
+        height: 477px;
+
+        background: #81b3d2 url("../img/photo-map@2x.jpg") no-repeat center;
+    }
+    @media (@desktop-widths)
+    {
+        background: #81b3d2 url("../img/photo-map@3x.jpg")  no-repeat center;
+    }
+    & iframe
+    {
+        width: 100%;
         height: 360px;
-        @media (@tablet-widths) {
-            width: 768px;
+        @media (@tablet-widths)
+        {
             height: 477px;
         }
-        @media (@desktop-widths) {
-            width: 1200px;
+        @media (@desktop-widths)
+        {
             height: 477px;
         }
     }
