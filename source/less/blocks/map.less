@@ -19,10 +19,12 @@
     {
         background: #81b3d2 url("../img/photo-map@3x.jpg")  no-repeat center;
     }
-    & iframe
+    &__iframe
     {
         width: 100%;
         height: 360px;
+
+        pointer-events: none;
 
         border: 0;
         @media (@tablet-widths)
@@ -33,5 +35,9 @@
         {
             height: 477px;
         }
+    }
+    &__iframe-js
+    {
+        pointer-events: auto;
     }
 }

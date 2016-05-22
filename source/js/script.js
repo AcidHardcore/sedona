@@ -13,6 +13,9 @@ var childrenPlus = children.querySelector('.btn--plus');
 var childrenInput = children.querySelector('.search__input-number');
 var childrenMinus = children.querySelector('.btn--minus');
 
+var map = document.querySelector('.map');
+var frame = document.querySelector('.map__iframe');
+
 //menu and form hide on load page
 window.onload = function () {
     popup.classList.add('page-nav__list--close-js');
@@ -54,4 +57,15 @@ childrenMinus.addEventListener('tap', function (event) {
     if (childrenInput.value > 0) {
         childrenInput.value = parseInt(childrenInput.value) - 1;
     }
+});
+
+//to prevent accidentally move  on a map
+map.addEventListener('tap', function (event) {
+    event.preventDefault();
+    frame.classList.add('map__iframe-js');
+});
+//when mouse leaves a map it will switch off
+map.addEventListener('mouseleave', function (event) {
+    event.preventDefault();
+    frame.classList.remove('map__iframe-js');
 });
