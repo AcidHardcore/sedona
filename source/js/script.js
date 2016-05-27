@@ -1,8 +1,9 @@
 "use strict";
 var burger = document.querySelector('.page-nav__collapse');
 var popup = document.querySelector('.page-nav__list');
-var close = popup.querySelector('.page-nav__close');
- var form = document.querySelector('.search');
+var logo = document.querySelector('.page-header__logo');
+var close = document.querySelector('.page-nav__close');
+var form = document.querySelector('.search');
 var mapOpen = document.querySelector(".btn--search-collapse");
 var adult = document.querySelector('.search__data-adult-inner');
 var adultPlus = adult.querySelector('.btn--plus');
@@ -25,6 +26,7 @@ window.onload = function () {
 burger.addEventListener('tap', function (event) {
     event.preventDefault();
     popup.classList.toggle('page-nav__list--close-js');
+    logo.classList.toggle('page-header__logo--move-js');
 });
 //hide menu on tap to close button
 close.addEventListener('tap', function (event) {
@@ -33,13 +35,13 @@ close.addEventListener('tap', function (event) {
 });
 //Open map on tap to button
 mapOpen.addEventListener('tap', function (event) {
-   event.preventDefault();
+    event.preventDefault();
     form.classList.toggle('search--hide-js');
 });
 //plus, minus buttons adult
 adultPlus.addEventListener('tap', function (event) {
-   event.preventDefault();
-     adultInput.value = parseInt(adultInput.value) + 1;
+    event.preventDefault();
+    adultInput.value = parseInt(adultInput.value) + 1;
 });
 adultMinus.addEventListener('tap', function (event) {
     event.preventDefault();

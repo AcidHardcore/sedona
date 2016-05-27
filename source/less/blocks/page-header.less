@@ -2,15 +2,25 @@
 
 .page-header
 {
+    position: relative;
+
+    min-height: 56px;
     &__logo
     {
-        position: relative;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
 
         display: block;
 
         width: 67px;
         height: 56px;
-        margin: 0 auto;
+        margin: auto;
+    }
+    &__logo--move-js
+    {
+        bottom: -56px;
     }
     &__logo-triangle
     {
@@ -33,11 +43,16 @@
     {
         &
         {
-            height: 56px;
         }
         &__logo
         {
-            top: -87px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: auto;
+            left: 0;
+
+            margin: auto;
         }
     }
 }
